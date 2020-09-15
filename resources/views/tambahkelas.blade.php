@@ -15,9 +15,9 @@
        id <input type="text" name="id" required="required"><br>
        kode <input type="text" name="kode" required="required"><br>
        semester <input type="number" name="semester" required="required"><br>
-       Dosen_id <input type="number" name="dosen_id" required="required"><br>
-       Matakuliah_id <input type="number" name="matakuliah_id" required="required"><br>
-       Prodi_id <input type="number" name="prodi_id" required="required"> <br>
+       dosen_id <input type="number" name="dosen_id" required="required"><br>
+       matakuliah_id <input type="number" name="matakuliah_id" required="required"><br>
+       prodi_id <input type="number" name="prodi_id" required="required"> <br>
        <input type="submit" value="Simpan Data">
     </form>
 </body>

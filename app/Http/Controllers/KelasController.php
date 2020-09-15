@@ -24,7 +24,7 @@ class KelasController extends Controller
            'matakuliah_id'=> $request->matakuliah_id,
            'prodi_id'=> $request->prodi_id
        ]);
-       return redirect('kelas');
+       return redirect('/kelas');
    }
    public function edit($id){
        $kelas = DB::table('kelas')->where('id',$id)->get();
