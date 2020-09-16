@@ -261,11 +261,11 @@ return [
         ],
         [
             'text' => 'Jawaban Kuisioner',
-            'url'  => '#',
-        ],[
+            'url'  => 'admin/',
+        ], [
             'text' => 'Kusioner Dosen',
             'url'  => '#',
-        ],[
+        ], [
             'text' => 'Chart',
             'url'  => '#',
         ],
