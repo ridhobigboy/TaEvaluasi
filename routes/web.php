@@ -63,9 +63,9 @@ Route::get('/dosen/hapus/{id}', 'DosenController@hapus');
     //Routing Prodi
 Route::get('prodi', 'ProdiController@index');
 Route::get('/prodi/tambah', 'ProdiController@tambah');
-Route::post('/prodi/new', 'ProdiContorller@new');
+Route::post('/prodi/new', 'ProdiController@new');
 Route::get('/prodi/edit/{id}', 'ProdiController@edit');
-Route::post('/prodi/update', 'ProdiCOntroller@update');
+Route::post('/prodi/update', 'ProdiController@update');
 Route::get('prodi/hapus/{id}', 'ProdiController@hapus');
 
     //Routing Matakuliah
