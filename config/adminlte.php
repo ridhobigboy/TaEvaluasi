@@ -261,10 +261,14 @@ return [
         ],
         [
             'text' => 'Jawaban Kuisioner',
-            'url'  => 'admin/',
+            'url'  => 'admin/Jawaban',
         ], [
-            'text' => 'Kusioner Dosen',
-            'url'  => '#',
+            'text' => 'Kuisioner Dosen',
+            'url'  => 'admin/Kuisioner',
+        ],
+        [
+            'text' => 'Kuisioner Kelas',
+            'url'  => 'admin/Kelas',
         ], [
             'text' => 'Chart',
             'url'  => '#',
@@ -307,22 +311,22 @@ return [
         //         ],
         //     ],
         // ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+        // ['header' => 'labels'],
+        // [
+        //     'text'       => 'important',
+        //     'icon_color' => 'red',
+        //     'url'        => '#',
+        // ],
+        // [
+        //     'text'       => 'warning',
+        //     'icon_color' => 'yellow',
+        //     'url'        => '#',
+        // ],
+        // [
+        //     'text'       => 'information',
+        //     'icon_color' => 'cyan',
+        //     'url'        => '#',
+        // ],
     ],
 
     /*
