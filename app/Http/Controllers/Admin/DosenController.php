@@ -1,17 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+    //memanggil model pegawai
+use App\dosen;
 
 class DosenController extends Controller
 {
     public function index(){
-        $dosen = DB::table('dosen')->get();
+        //mengambil data dosen
+        $dosen = dosen::all();
 
-        return view('dosen',['dosen'=>$dosen]);
+        return view('adminlte/dosen',['dosen'=>$dosen]);
     }
     public function tambah(){
         return view('tambahdosen');

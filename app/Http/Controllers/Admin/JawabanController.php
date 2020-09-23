@@ -1,16 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+
+    //memanggil model jwaban
+use App\jawabankuisioner;
 
 class JawabanController extends Controller
 {
     public function index(){
-        $jawaban = DB::table('JawabanKuisioner')->get();
+            //mengambil data jawaban
+        $jawaban = jawabankuisioner::all();
 
-        return view('jawaban',['jawaban'=>$jawaban]);
+        return view('adminlte/jawaban',['jawaban'=>$jawaban]);
     }
     public function tambah(){
         return view('tambahjawaban');
@@ -38,5 +42,6 @@ class JawabanController extends Controller
         DB::table('jawabankuisioner')->where('id',$id)->delete();
 
         return redirect('/jawaban');
+
     }
 }

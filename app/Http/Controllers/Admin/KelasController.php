@@ -1,16 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+    //mengambil data dari kelas
+use App\kelas;
 
 class KelasController extends Controller
 {
    public function index(){
-       $kelas = DB::table('kelas')->get();
+       $kelas = kelas::all();
 
-       return view('kelas',['kelas'=>$kelas]);
+       return view('adminlte/kelas',['kelas'=>$kelas]);
    }
    public function tambah(){
        return view('tambahkelas');

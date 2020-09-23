@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateJawabankuisionerTable extends Migration
+class CreateMatkuliahsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateJawabankuisionerTable extends Migration
      */
     public function up()
     {
-        Schema::create('jawabankuisioner', function (Blueprint $table) {
-            $table->increments('id')->index();
-            $table->string('jawaban');
+        Schema::create('matakuliah', function (Blueprint $table) {
+            $table->increment('id')->index;
+            $table->string('nama');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateJawabankuisionerTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jawabankuisioner');
+        Schema::dropIfExists('matakuliah');
     }
 }

@@ -8,23 +8,12 @@
 </head>
 <body>
     <h2>Dosen</h2>
-    <a href="/dosen/tambah">+ Tambah Dosen</a>
     <br><br>
-    <table border="1">
-        <tr>
-            <th>id</th>
-            <th>nama</th>
-        </tr>
+
+    <ul>
         @foreach ($dosen as $d)
-            <tr>
-                <td>{{ $d->id}}</td>
-                <td>{{ $d->nama}}</td>
-                <td>
-                    <a href="/dosen/edit/{{ $d->id}}">Edit</a>
-                    <a href="/dosen/edit/{{ $d->id}}">Hapus</a>
-                </td>
-            </tr>
+            <li>{{"id : ".$d->id,'| Nama :'. $d->nama}}</li>
         @endforeach
-    </table>
+    </ul>
 </body>
 </html>

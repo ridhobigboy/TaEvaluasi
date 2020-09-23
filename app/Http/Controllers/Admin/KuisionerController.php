@@ -1,46 +1,65 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+    //mengambil data kuisioner
+use App\kuisionerdosen;
+    //meridericet keroute
+use Illuminate\Routing\Redirector;
 
 class KuisionerController extends Controller
 {
     public function index(){
-        $pertanyaan = DB::table('kuisionerdosen')->get();
+        $pertanyaan = kuisionerdosen::all();
 
-        return view('pertanyaan',['pertanyaan' =>$pertanyaan]);
+        // return view('adminlte/pertanyaan',['pertanyaan' =>$pertanyaan]);
+        return redirect()->route('pertanyaan.index');
     }
     public function tambah(){
-        return view('tambahpertanyaan');
+        return view('adminlte/tambahpertanyaan');
     }
     public function baru(Request $request){
-        DB::table('kuisionerdosen')->insert([
-            'Id'=> $request->id,
-            'pertanyaan'=> $request->pertanyaan,
-            'aktif'=> $request->aktif,
+        $this->validate($request,[
+    		'id' => 'required',
+            'pertanyaan' => 'required',
+            'aktif'=> 'required',
+            'choice'=>'required'
+    	]);
+
+        Pertanyaan::create([
+    		'id' => $request->id,
+            'pertanyaan' => $request->pertanyaan,
+            'aktif' => $request->aktif,
             'choice' => $request->choice
-        ]);
-        return redirect('/pertanyaan');
+    	]);
+
+    	return redirect('adminlte/pertanyaan');
     }
     public function edit($id){
         $pertanyaan = DB::table('kuisionerdosen')->where('id',$id)->get();
 
-        return view('editpertanyaan',['pertanyaan' => $pertanyaan]);
+        return view('adminlte/editpertanyaan',['pertanyaan' => $pertanyaan]);
     }
-    public function update(Request $request){
-        DB::table('kuisionerdosen')->where('id',$request->id)->update([
-            'id' => $request->id,
-            'pertanyaan' => $request->pertanyaan,
-            'aktif' => $request->aktif,
-            'choice' => $request->choice
-        ]);
-        return redirect('/pertanyaan');
+    public function update($id,Request $request){
+        $this->validate($request,[
+            'id' => 'required',
+            'pertanyaan' => 'required',
+            'aktif'=> 'required',
+            'choice' => 'required'
+         ]);
+
+         $pertanyaan = Kuisionerdosen::find($id);
+         $pertanyaan->pertanyaan = $request->pertanyaan;
+         $pertanyaan->aktif = $request->aktif;
+         $pertanyaan->choice = $request->choice;
+         $pertanyaan->save();
+         return redirect('/pertanyaan');
     }
     public function hapus($id){
-        DB::table('kuisionerdosen')->where('id',$id)->delete();
-
+        $pertanyaan = kuisionerdosen::find($id);
+        $pertanyaan->delete();
         return redirect('/pertanyaan');
     }
 }

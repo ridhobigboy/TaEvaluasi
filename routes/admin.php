@@ -19,7 +19,7 @@ Route::post('/jawaban/update', 'JawabanController@update');
 Route::get('/jawaban/hapus/{id}', 'JawabanController@hapus');
 
         //Routing KuisionerKelas
-Route::get('/pertanyaan', 'KuisionerController@index');
+Route::get('/pertanyaan', 'KuisionerController@index')->name('pertanyaan.index');
 Route::get('/pertanyaan/tambah', 'KuisionerController@tambah');
 Route::post('/pertanyaan/baru', 'KuisionerController@baru');
 Route::get('/pertanyaan/edit/{id}', 'KuisionerController@edit');

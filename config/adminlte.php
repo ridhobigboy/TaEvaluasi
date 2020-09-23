@@ -270,7 +270,7 @@ return [
             'text' => 'Kuisioner Kelas',
             'url'  => 'admin/Kelas',
         ], [
-            'text' => 'Chart',
+            'text' => 'Dosen',
             'url'  => '#',
         ],
         //[

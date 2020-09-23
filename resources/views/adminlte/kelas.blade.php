@@ -7,39 +7,12 @@
     <title>Kelas</title>
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="card-body">
-                <h2>Kelas</h2>
-
-                <a href="/kelas/tambah">+ Tambah Kelas</a>
-                <br><br>
-                <table border="1">
-                    <tr>
-                        <th>Id</th>
-                        <th>Kode</th>
-                        <th>Semester</th>
-                        <th>Dosen_id</th>
-                        <th>Matakuliah_id</th>
-                        <th>Prodi_id</th>
-                    </tr>
-                    @foreach ($kelas as $k)
-                        <tr>
-                            <td>{{ $k->id}}</td>
-                            <td>{{ $k->kode}}</td>
-                            <td>{{ $k->semester}}</td>
-                            <td>{{ $k->dosen_id}}</td>
-                            <td>{{ $k->matakuliah_id}}</td>
-                            <td>{{ $k->prodi_id}}</td>
-                            <td>
-                                <a href="/kelas/edit/{{ $k->id}}">Edit</a>
-                                <a href="/kelas/hapus/{{ $k->id}}">Hapus</a>
-                            </td>
-                        </tr>
-                    @endforeach
-                </table>
-            </div>
-        </div>
-    </div>
+   <h2>Kelas</h2>
+   <br><br>
+   <ul>
+       @foreach ($kelas as $k)
+           <li>{{"id :".$k->id,'| kode :'.$k->kode,'semester :'.$k->semester,'dosen_id :'.$k->dosen_id,'matakuliah_id : '.$k->matakuliah_id,'prodi_id : '.$k->prodi_id}}</li>
+       @endforeach
+   </ul>
 </body>
 </html>
