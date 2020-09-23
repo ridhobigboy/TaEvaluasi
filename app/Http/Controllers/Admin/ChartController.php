@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Charts;
@@ -9,23 +11,24 @@ use DB;
 
 class ChartController extends Controller
 {
-    public function index(){
-        $users = User::where(DB::raw("(DATE_FORMAT(created_at,'%Y'))"),date('Y'))
+    public function index()
+    {
+        $users = User::where(DB::raw("(DATE_FORMAT(created_at,'%Y'))"), date('Y'))
 
-        ->get();
+            ->get();
 
         $chart = Charts::database($users, 'bar', 'highcharts')
 
-      ->title("Monthly new Register Users")
+            ->title("Monthly new Register Users")
 
-      ->elementLabel("Total Users")
+            ->elementLabel("Total Users")
 
-      ->dimensions(1000, 500)
+            ->dimensions(1000, 500)
 
-      ->responsive(false)
+            ->responsive(false)
 
-      ->groupByMonth(date('Y'), true);
+            ->groupByMonth(date('Y'), true);
 
-        return view('chart',compact('chart'));
+        return view('chart', compact('chart'));
     }
 }

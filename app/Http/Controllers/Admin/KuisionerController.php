@@ -1,46 +1,54 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class KuisionerController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $pertanyaan = DB::table('kuisionerdosen')->get();
 
-        return view('pertanyaan',['pertanyaan' =>$pertanyaan]);
+        return view('adminlte.pertanyaan', compact('pertanyaan'));
     }
-    public function tambah(){
-        return view('tambahpertanyaan');
+    public function tambah()
+    {
+        return view('adminlte.tambahpertanyaan');
     }
-    public function baru(Request $request){
+    public function baru(Request $request)
+    {
         DB::table('kuisionerdosen')->insert([
-            'Id'=> $request->id,
-            'pertanyaan'=> $request->pertanyaan,
-            'aktif'=> $request->aktif,
+            'Id' => $request->id,
+            'pertanyaan' => $request->pertanyaan,
+            'aktif' => $request->aktif,
             'choice' => $request->choice
         ]);
-        return redirect('/pertanyaan');
+        return redirect()->route('pertanyaan.index');
     }
-    public function edit($id){
-        $pertanyaan = DB::table('kuisionerdosen')->where('id',$id)->get();
+    public function edit($id)
+    {
+        $pertanyaan = DB::table('kuisionerdosen')->where('id', $id)->get();
 
-        return view('editpertanyaan',['pertanyaan' => $pertanyaan]);
+        return view('adminlte.editpertanyaan', compact('pertanyaan'));
     }
-    public function update(Request $request){
-        DB::table('kuisionerdosen')->where('id',$request->id)->update([
+    public function update(Request $request)
+    {
+        DB::table('kuisionerdosen')->where('id', $request->id)->update([
             'id' => $request->id,
             'pertanyaan' => $request->pertanyaan,
             'aktif' => $request->aktif,
             'choice' => $request->choice
         ]);
-        return redirect('/pertanyaan');
+        return redirect()->route('pertanyaan.index');
     }
-    public function hapus($id){
-        DB::table('kuisionerdosen')->where('id',$id)->delete();
+    public function hapus($id)
+    {
+        DB::table('kuisionerdosen')->where('id', $id)->delete();
 
-        return redirect('/pertanyaan');
+        return redirect()->route('pertanyaan.index');
     }
 }

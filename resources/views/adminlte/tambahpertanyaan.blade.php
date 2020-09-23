@@ -8,10 +8,10 @@
 </head>
 <body>
     <h2>Kuisioner Dosen</h2>
-    <a href="/pertanyaan"> Kembali</a>
+    <a href="{{route('pertanyaan.index')}}"> Kembali</a>
     <br><br>
 
-    <form action="/pertanyaan/baru" method="POST">
+    <form action="{{route('pertanyaan.baru')}}" method="POST">
         {{ csrf_field() }}
         id <input type="text" name="id" required="required"><br>
         pertanyaan <input type="text" name="pertanyaan" required="required"><br>

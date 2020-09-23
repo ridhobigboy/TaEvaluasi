@@ -9,7 +9,7 @@
 <body>
     <h2>Pertanyaan Dosen</h2>
 
-    <a href="/pertanyaan/tambah"> + Tambah Pertanyaan</a>
+    <a href="{{route('pertanyaan.tambah')}}"> + Tambah Pertanyaan</a>
     <br><br>
     <table border="1">
         <tr>
@@ -25,8 +25,8 @@
                 <td>{{ $p->aktif}}</td>
                 <td>{{ $p->choice}}</td>
                 <td>
-                    <a href="/pertanyaan/edit/{{ $p->id}}"> Edit</a>
-                    <a href="/pertanyaan/hapus/{{ $p->id}}"> Hapus</a>
+                <a href="{{route('pertanyaan.edit', $p->id)}}"> Edit</a>
+                    <a href="{{route('pertanyaan.hapus', $p->id)}}"> Hapus</a>
                 </td>
             </tr>
         @endforeach

@@ -1,21 +1,26 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class MatakuliahController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $matakuliah = DB::table('matakuliah')->get();
 
-        return view('matkul',['matakuliah'=>$matakuliah]);
+        return view('matkul', ['matakuliah' => $matakuliah]);
     }
-    public function tambah(){
+    public function tambah()
+    {
         return view('tambahmatkul');
     }
-    public function new(Request $request){
+    public function new(Request $request)
+    {
         DB::table('mataluliah')->insert([
             'id' => $request->id,
             'nama' => $request->nama,
@@ -23,12 +28,14 @@ class MatakuliahController extends Controller
         ]);
         return redirect('/matkul');
     }
-    public function edit($id){
-        $matakuliah = DB::table('matakuliah')->where('id',$id)->get();
+    public function edit($id)
+    {
+        $matakuliah = DB::table('matakuliah')->where('id', $id)->get();
 
-        return view('editmatkul',['matakuliah'=>$matakuliah]);
+        return view('editmatkul', ['matakuliah' => $matakuliah]);
     }
-    public function update(Request $request){
+    public function update(Request $request)
+    {
         DB::table('matakuliah')->where('id,$request->id')->update([
             'id' => $request->id,
             'nama' => $request->nama,
@@ -36,8 +43,9 @@ class MatakuliahController extends Controller
         ]);
         return redirect('/matkul');
     }
-    public function hpaus($id){
-        DB::table('matakuliah')->where('id',$id)->delete();
+    public function hpaus($id)
+    {
+        DB::table('matakuliah')->where('id', $id)->delete();
 
         return redirect('/matkul');
     }
