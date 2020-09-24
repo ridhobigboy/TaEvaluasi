@@ -42,7 +42,7 @@ class KuisionerController extends Controller
             'choice' => $request->choice
         ]);
 
-        return redirect('adminlte/pertanyaan');
+        return redirect()->route('pertanyaan.index');
     }
     public function edit($id)
     {

@@ -14,10 +14,10 @@
                 CRUD Pertanyaan <strong>Tambah Pertanyaan</strong>
             </div>
             <div class="card-body">
-                <a href="/pertanyaan" class="btn btn-primary">Kembali</a>
+            <a href="{{route('pertanyaan.index')}}" class="btn btn-primary">Kembali</a>
                 <br><br>
 
-                <form action="/pertanyaan/baru" method="POST">
+                <form action="{{route('pertanyaan.baru')}}" method="POST">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label>Id</label>
@@ -51,7 +51,7 @@
                         <input type="text" name="choice" class="form-control" placeholder="choice">
                         @if ($errors->has('choice'))
                             <div class="text-danger">
-                                {{$errors->fist('choice')}}
+                                {{$errors->first('choice')}}
                             </div>
                         @endif
                     </div>

@@ -12,7 +12,7 @@
         <div class="card mt-5">
             <div class="card-header text-center">
                 <div class="card-body">
-                    <a href="/pertanyaan/tambah" class="btn btn-primary">Input Pertanyaan Baru</a>
+                    <a href="{{route('pertanyaan.tambah')}}" class="btn btn-primary">Input Pertanyaan Baru</a>
                     <br><br>
                     <table class="table table-bordered table-haver table-striped">
                         <thead>
