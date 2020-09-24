@@ -9,5 +9,8 @@ class kuisionerdosen extends Model
     //
     protected $table = "kuisionerdosen";
 
-    protected $fillable = ['id','pertanyaan','aktif','choice'];
+    protected $fillable = ['id', 'pertanyaan', 'aktif', 'choice'];
+
+    // Tambahin ini di setiap model nanti
+    public $timestamps = false;
 }

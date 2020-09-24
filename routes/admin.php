@@ -7,6 +7,7 @@ Route::get('/', function () {
     return 'Hi ini dashboard asd  ';
 });
 
+// Setiap route coba di kasih name kaya dibawah biar enak manggilnya
 
 Route::get('/ex', 'ExController@index');
 

@@ -10,6 +10,7 @@ use App\kuisionerdosen;
 
 //meridericet keroute
 use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\DB;
 
 class KuisionerController extends Controller
 {
@@ -35,7 +36,8 @@ class KuisionerController extends Controller
             'choice' => 'required'
         ]);
 
-        Pertanyaan::create([
+        // Harusnya yg di panggil itu model yg udah di bikin
+        kuisionerdosen::create([
             'id' => $request->id,
             'pertanyaan' => $request->pertanyaan,
             'aktif' => $request->aktif,
