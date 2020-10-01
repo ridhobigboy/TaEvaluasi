@@ -68,7 +68,7 @@
                 <strong>Form Evaluasi Dosen</strong>
             </div>
             <div class="card-body">
-                <form action="input/proses" method="POST">
+            <form action="{{route('proses')}}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label>Nim</label>
@@ -81,8 +81,8 @@
                     </div>
                     <div class="form-group">
                         <label>Kelas</label>
-                        <input type="text" name="kelas_id" class="form-control" placeholder="Kelas">
-                        @if ($errors->has('kelas_id'))
+                        <input type="text" name="kelas" class="form-control" placeholder="Kelas">
+                        @if ($errors->has('kelas'))
                             <div class="text-danger">
                                 {{$errors->first('kelas')}}
                             </div>
@@ -90,55 +90,39 @@
                     </div>
                     <div class="form-group">
                         <label>Pelaksanaan Kuliah Dimulai & Diakhiri tepat waktu</label> <br>
-                        {{-- @foreach ($data ?? '' as $jawabankuisioner)
-                    <label><input type="checkbox" name="jawaban_id[]" value="{{$jawabankuisioner->id}}">{{$jawabankuisioner->jawaban}}}</label>
-                        @endforeach --}}
-                        <select class="form-control" name="jawaban_id[]" multiple="">
-                            <option value="Sangat tidak setuju">Sangat tidak setuju</option>
-                            <option value="Tidak setuju">Tidak setuju</option>
-                            <option value="Agak setuju">Agak setuju</option>
-                            <option value="Setuju">Setuju</option>
-                            <option value="Sangat setuju">Sangat setuju</option>
+
+                        <select class="form-control" name="pertanyaan_1" multiple="">
+                            <option value="1">Sangat tidak setuju</option>
+                            <option value="2">Tidak setuju</option>
+                            <option value="3">Agak setuju</option>
+                            <option value="4">Setuju</option>
+                            <option value="5">Sangat setuju</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Dosen menguasai materi & menyampaikan dengan baik</label> <br>
-                        {{-- <label><input type="checkbox" name="jawaban_id[]" value="Sangat tidak setuju">Sangat tidak setuju</label>
-                        <label><input type="checkbox" name="jawaban_id[]" value="Tidak setuju">Tidak setuju</label>
-                        <label><input type="checkbox" name="jawaban_id[]" value="Agak setuju">Agak setuju</label>
-                        <label><input type="checkbox" name="jawaban_id[]" value="Setuju">Setuju</label>
-                        <label><input type="checkbox" name="jawaban_id[]" value="Sangat setuju">Sangat setuju</label> --}}
-                        <select class="selectpicker" multiple data-live-search="true" name="jawaban_id[]">
-                            <option value="Sangat tidak setuju">Sangat tidak setuju</option>
-                            <option value="Tidak setuju">Tidak setuju</option>
-                            <option value="Agak setuju">Agak setuju</option>
-                            <option value="Setuju">Setuju</option>
-                            <option value="Sangat setuju">Sangat setuju</option>
+                        <select class="form-control" name="pertanyaan_2" multiple="">
+                            <option value="1">Sangat tidak setuju</option>
+                            <option value="2">Tidak setuju</option>
+                            <option value="3">Agak setuju</option>
+                            <option value="4">Setuju</option>
+                            <option value="5">Sangat setuju</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Diskusi materi & pembahasan tugas/ujian berjalan baik, didalam/luar kelas</label> <br>
-                        {{-- <label><input type="checkbox" name="jawaban_id[]" value="Sangat tidak setuju">Sangat tidak setuju</label>
-                        <label><input type="checkbox" name="jawaban_id[]" value="Tidak setuju">Tidak setuju</label>
-                        <label><input type="checkbox" name="jawaban_id[]" value="Agak setuju">Agak setuju</label>
-                        <label><input type="checkbox" name="jawaban_id[]" value="Setuju">Setuju</label>
-                        <label><input type="checkbox" name="jawaban_id[]" value="Sangat setuju">Sangat setuju</label> --}}
-                        <select class="form-control" name="jawaban_id[]" multiple="">
-                            <option value="Sangat tidak setuju">Sangat tidak setuju</option>
-                            <option value="Tidak setuju">Tidak setuju</option>
-                            <option value="Agak setuju">Agak setuju</option>
-                            <option value="Setuju">Setuju</option>
-                            <option value="Sangat setuju">Sangat setuju</option>
+                        <select class="form-control" name="pertanyaan_3" multiple="">
+                            <option value="1">Sangat tidak setuju</option>
+                            <option value="2">Tidak setuju</option>
+                            <option value="3">Agak setuju</option>
+                            <option value="4">Setuju</option>
+                            <option value="5">Sangat setuju</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Ada saran yang diberikan untuk dosen terkait</label>
-                        <input type="text" name="jawaban_text" class="form-control" placeholder="Jawaban">
-                        @if ($errors->has('jawaban_text'))
-                            <div class="text-danger">
-                                {{$errors->first('jawaban')}}
-                            </div>
-                        @endif
+                        <input type="text" name="content" class="form-control" placeholder="Jawaban">
+
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-success" value="simpan">
