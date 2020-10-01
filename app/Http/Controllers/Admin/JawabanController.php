@@ -8,40 +8,57 @@ use App\Http\Controllers\Controller;
     //memanggil model jwaban
 use App\jawabankuisioner;
 
+    //meridericet ke route
+use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\DB;
+
 class JawabanController extends Controller
 {
     public function index(){
             //mengambil data jawaban
         $jawaban = jawabankuisioner::all();
 
-        return view('adminlte/jawaban',['jawaban'=>$jawaban]);
+        return view('adminlte.jawaban',compact('jawaban'));
     }
     public function tambah(){
-        return view('tambahjawaban');
+        return view('adminlte.tambahjawaban');
     }
-    public function new(Request $request){
-        DB::table('jawabankuisioner')->insert([
-            'id' => $request->id,
-            'jawaban' => $request->jawaban
-        ]);
-        return redirect('/jawaban');
+    public function new(Request $request)
+    {
+
+        $this->validate($request, [
+        'id' => 'required',
+        'jawaban' => 'required'
+       ]);
+            //memanggil model
+       jawabankuisioner::create([
+           'id' => $request->id,
+           'jawaban' => $request->jawaban
+       ]);
+
+       return redirect()->route('jawaban.index');
     }
     public function edit($id){
-        $jawaban = DB::table('jawabankuisioner')->where('id',$id)->get();
+        $jawaban = jawabankuisioner::find($id);
 
-        return view('editjawaban',['jawaban' => $jawaban]);
+        return view('adminlte.editjawaban',compact('jawaban'));
     }
-    public function update(Request $request){
-        DB::table('jawabankuisioner')->where('id',$request->id)->update([
-            'id' => $request->id,
-            'jawaban' => $request->jawaban
+    public function update($id,Request $request){
+        $this->validate($request, [
+            'id' => 'reuquired',
+            'jawaban' => 'required'
         ]);
-        return redirect('/jawaban');
-    }
-    public function hapus($id){
-        DB::table('jawabankuisioner')->where('id',$id)->delete();
 
-        return redirect('/jawaban');
+        $jawaban = jawabankuisioner::find($id);
+        $jawaban->jawaban = $request->jawaban;
+        $jawaban->save();
+        return redirect()->route('jawaban.index');
+    }
+    public function hapus($id)
+    {
+        $jawaban = jawabankuisioner::find($id);
+        $jawaban->delete();
+        return redirect()->route('jawaban.index');
 
     }
 }

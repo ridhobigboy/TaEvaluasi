@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProdisTable extends Migration
+class CreateMatakuliahTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateProdisTable extends Migration
      */
     public function up()
     {
-        Schema::create('prodi', function (Blueprint $table) {
-            $table->increment('id')->index();
-            $table->string('nama');
+        Schema::create('matakuliah', function (Blueprint $table) {
+            $table->increments('id')->index;
+            $table->string('nama',45);
+            $table->integer('sks');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateProdisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('prodi');
+        Schema::dropIfExists('matakuliah');
     }
 }

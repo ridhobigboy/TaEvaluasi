@@ -24,8 +24,9 @@ Route::get('/', function () {
 
 
 // Route::get('chart', 'ChartController@index');
-// Route::get('/input', 'KuisionerkelasController@index');
-// Route::post('/proses', 'KuisionerkelasController@proses');
+ Route::get('/input', 'KuisionerkelasController@index');
+ Route::post('/proses', 'KuisionerkelasController@proses')->name('proses');
+
 
 
 // Auth::routes();

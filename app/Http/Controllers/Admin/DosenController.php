@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-    //memanggil model pegawai
+    //memanggil model dosen
 use App\dosen;
+    //meridirect route
+use Illumante\Routing\Redirector;
+use Illumante\Support\Facades\DB;
 
 class DosenController extends Controller
 {
@@ -13,33 +16,45 @@ class DosenController extends Controller
         //mengambil data dosen
         $dosen = dosen::all();
 
-        return view('adminlte/dosen',['dosen'=>$dosen]);
+        return view('adminlte.dosen',compact('dosen'));
     }
     public function tambah(){
-        return view('tambahdosen');
+        return view('adminlte.tambahdosen');
     }
     public function new(Request $request){
-        DB::table('dosen')->insert([
-            'id'=>$request->id,
-            'nama'=>$request->nama
+        $this->validate($request, [
+            'id' => 'required',
+            'jawaban' => 'required'
         ]);
-        return redirect('/dosen');
-    }
-    public function edit($id){
-        $dosen = DB::table('dosen')->where('id',$id)->get();
 
-        return view('editdosen',['dosen'=>$dosen]);
-    }
-    public function update(Request $request){
-        DB::table('dosen')->where('id',$request->id)->update([
+        dosen::create([
             'id' => $request->id,
-            'nama' => $request->nama
+            'jawaban' => $request->jawaban
         ]);
-        return redirect('/dosen');
+        return redirect()->route('dosen.index');
     }
-    public function hapus($id){
-        DB::table('dosen')->where('id',$id)->delete();
+    public function edit($id)
+    {
+        $dosen = dose::find($id);
 
-        return redirect('dosen');
+        return view('adminlte.editdosen',compact('dosen'));
+    }
+    public function update($id, Request $request){
+        $this->validate($request, [
+            'id' => 'required',
+            'nama' => 'required'
+        ]);
+
+        $dosen = dosen::find($id);
+        $dosen->dosen = $request->id;
+        $dosen->dosen = $request->nama;
+        $dosen->save();
+        return redirect()->route('adminlte.dosen');
+    }
+    public function hapus($id)
+    {
+        $dosen = dosen::find($id);
+        $dosen->delete();
+        return redirect('dosen.index');
     }
 }

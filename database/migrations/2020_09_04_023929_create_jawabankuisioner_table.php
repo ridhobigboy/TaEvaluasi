@@ -15,7 +15,7 @@ class CreateJawabankuisionerTable extends Migration
     {
         Schema::create('jawabankuisioner', function (Blueprint $table) {
             $table->increments('id')->index();
-            $table->string('jawaban');
+            $table->string('jawaban',20);
             $table->timestamps();
         });
     }

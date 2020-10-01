@@ -12,12 +12,12 @@ Route::get('/', function () {
 Route::get('/ex', 'ExController@index');
 
 //Routing JawabanKuisioner
-Route::get('/jawaban', 'JawabanController@index');
-Route::get('/jawaban/tambah', 'JawabanController@tambah');
-Route::post('/jawaban/new', 'JawabanController@new');
-Route::get('/jawaban/edit/{id}', 'JawabanController@edit');
-Route::post('/jawaban/update', 'JawabanController@update');
-Route::get('/jawaban/hapus/{id}', 'JawabanController@hapus');
+Route::get('/jawaban', 'JawabanController@index')->name('jawaban.index');
+Route::get('/jawaban/tambah', 'JawabanController@tambah')->name('jawaban.tambah');
+Route::post('/jawaban/new', 'JawabanController@new')->name('jawaban.new');
+Route::get('/jawaban/edit/{id}', 'JawabanController@edit')->name('jawaban.edit');
+Route::post('/jawaban/update', 'JawabanController@update')->name('jawaban.update');
+Route::get('/jawaban/hapus/{id}', 'JawabanController@hapus')->name('jawaban.hapus');
 
 //Routing KuisionerKelas
 Route::get('/pertanyaan', 'KuisionerController@index')->name('pertanyaan.index');
@@ -28,36 +28,36 @@ Route::post('/pertanyaan/update', 'KuisionerController@update')->name('pertanyaa
 Route::get('/pertanyaan/hapus/{id}', 'KuisionerController@hapus')->name('pertanyaan.hapus');
 
 //Routing Kelas
-Route::get('kelas', 'KelasController@index');
-Route::get('/kelas/tambah', 'KelasController@tambah');
-Route::post('/kelas/new', 'KelasController@new');
-Route::get('/kelas/edit/{id}', 'KelasController@edit');
-Route::post('/kelas/update', 'KelasController@update');
-Route::get('/kelas/hapus/{id}', 'KelasController@hapus');
+Route::get('kelas', 'KelasController@index')->name('kelas.index');
+Route::get('/kelas/tambah', 'KelasController@tambah')->name('kelas.tambah');
+Route::post('/kelas/new', 'KelasController@new')->name('kelas.new');
+Route::get('/kelas/edit/{id}', 'KelasController@edit')->name('kelas.edit');
+Route::post('/kelas/update', 'KelasController@update')->name('kelas.update');
+Route::get('/kelas/hapus/{id}', 'KelasController@hapus')->name('kelas.hapus');
 
 //Routing Dosen
-Route::get('dosen', 'DosenController@index');
-Route::get('/dosen/tambah', 'DosenController@tambah');
-Route::post('/dosen/new', 'DosenController@new');
-Route::get('/dosen/edit/{id}', 'DosenController@edit');
-Route::post('/dosen/update', 'DosenController@update');
-Route::get('/dosen/hapus/{id}', 'DosenController@hapus');
+Route::get('dosen', 'DosenController@index')->name('dosen.index');
+Route::get('/dosen/tambah', 'DosenController@tambah')->name('dosen.tambah');
+Route::post('/dosen/new', 'DosenController@new')->name('dosen.new');
+Route::get('/dosen/edit/{id}', 'DosenController@edit')->name('dosen.edit');
+Route::post('/dosen/update', 'DosenController@update')->name('dosen.update');
+Route::get('/dosen/hapus/{id}', 'DosenController@hapus')->name('dosen.hapus');
 
 //Routing Prodi
-Route::get('prodi', 'ProdiController@index');
-Route::get('/prodi/tambah', 'ProdiController@tambah');
-Route::post('/prodi/new', 'ProdiController@new');
-Route::get('/prodi/edit/{id}', 'ProdiController@edit');
-Route::post('/prodi/update', 'ProdiController@update');
-Route::get('prodi/hapus/{id}', 'ProdiController@hapus');
+Route::get('prodi', 'ProdiController@index')->name('prodi.index');
+Route::get('/prodi/tambah', 'ProdiController@tambah')->name('prodi.tambah');
+Route::post('/prodi/new', 'ProdiController@new')->name('prodi.new');
+Route::get('/prodi/edit/{id}', 'ProdiController@edit')->name('prodi.edit');
+Route::post('/prodi/update', 'ProdiController@update')->name('prodi.update');
+Route::get('prodi/hapus/{id}', 'ProdiController@hapus')->name('prodi.hapus');
 
 //Routing Matakuliah
-Route::get('matkul', 'MatakuliahController@index');
-Route::get('/matkul/tambah', 'MatakuliahController@tambah');
-Route::post('/matkul/new', 'MatakuliahController@new');
-Route::get('/matkul/edit/{id}', 'MatakuliahController@edit');
-Route::post('/matkul/update', 'MatakuliahController@update');
-Route::get('/matkul/hapus/{id}', 'MatakuliahController@hapus');
+Route::get('matkul', 'MatakuliahController@index')->name('matkul.index');
+Route::get('/matkul/tambah', 'MatakuliahController@tambah')->name('matkul.tambah');
+Route::post('/matkul/new', 'MatakuliahController@new')->name('matkul.new');
+Route::get('/matkul/edit/{id}', 'MatakuliahController@edit')->name('matkul.eidt');
+Route::post('/matkul/update', 'MatakuliahController@update')->name('matkul.update');
+Route::get('/matkul/hapus/{id}', 'MatakuliahController@hapus')->name('matkul.hapus');
 
 //Routing adminlte3
 Auth::routes();

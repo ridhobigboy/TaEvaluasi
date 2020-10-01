@@ -1,44 +1,67 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
+    //mengambil data kuisioner
+use App\matkuliah;
+
+    //meridericet keroute
+use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\DB;
 class MatakuliahController extends Controller
 {
     public function index(){
-        $matakuliah = DB::table('matakuliah')->get();
+        $matakuliah = matkuliah::all();
 
-        return view('matkul',['matakuliah'=>$matakuliah]);
+        return view('adminlte.matkul',compact('matakuliah'));
     }
     public function tambah(){
-        return view('tambahmatkul');
+        return view('adminlte.tambahmatkul');
     }
     public function new(Request $request){
-        DB::table('mataluliah')->insert([
-            'id' => $request->id,
-            'nama' => $request->nama,
-            'sks' => $request->sks
+        $this->validate($request, [
+            'id' => 'required',
+            'nama' => 'required',
+            'sks' => 'required'
         ]);
-        return redirect('/matkul');
+
+            //memanggil model
+         matkuliah::create([
+             'id' => $request->id,
+             'nama' =>$request->nama,
+             'sks' => $request->sks
+         ]);
+
+        return redirect()->route('matkul.index');
     }
     public function edit($id){
-        $matakuliah = DB::table('matakuliah')->where('id',$id)->get();
+        $matakuliah = matakuliah::find($id);
 
-        return view('editmatkul',['matakuliah'=>$matakuliah]);
+        return view('adminlte.editmatkul',compact('matakuliah'));
     }
-    public function update(Request $request){
-        DB::table('matakuliah')->where('id,$request->id')->update([
-            'id' => $request->id,
-            'nama' => $request->nama,
-            'sks' => $request->sks
-        ]);
-        return redirect('/matkul');
-    }
-    public function hpaus($id){
-        DB::table('matakuliah')->where('id',$id)->delete();
+    public function update($id,Request $request){
+       $this->validate($request,[
+           'id' => 'request',
+           'nama' => 'request',
+           'sks' => 'request'
+       ]);
 
-        return redirect('/matkul');
+       $matakuliah = matakuliah::find($id);
+       $matakuliah->id = $request->id;
+       $matakuliah->nama = $request->nama;
+       $matakuliah->sks = $request->sks;
+       $matakuliah->save();
+       return redirect()->route('matkul.index');
+    }
+    public function hapus($id)
+    {
+
+        $matakuliah = matakuliah::find($id);
+        $matakuliah->delete();
+
+        return redirect()->route('matkul.index');
     }
 }

@@ -15,11 +15,11 @@ class CreateKuisionerkelasTable extends Migration
     {
         Schema::create('kuisionerkelas', function (Blueprint $table) {
             $table->increments('id')->index();
-            $table->char('nim');
+            $table->char('nim',10);
             $table->integer('kelas_id');
             $table->integer('pertanyaan_id');
             $table->integer('jawaban_id');
-            $table->text('jawaban_text');
+            $table->text('jawaban_text',45);
             $table->timestamps();
         });
     }

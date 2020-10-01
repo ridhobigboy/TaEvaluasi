@@ -25,7 +25,7 @@ class KuisionerController extends Controller
     }
     public function tambah()
     {
-        return view('adminlte/tambahpertanyaan');
+        return view('adminlte.tambahpertanyaan');
     }
     public function baru(Request $request)
     {
@@ -48,9 +48,9 @@ class KuisionerController extends Controller
     }
     public function edit($id)
     {
-        $pertanyaan = DB::table('kuisionerdosen')->where('id', $id)->get();
+        $pertanyaan = Kuisionerdosen::find($id);
 
-        return view('adminlte/editpertanyaan', ['pertanyaan' => $pertanyaan]);
+        return view('adminlte.editpertanyaan', compact('pertanyaan'));
     }
     public function update($id, Request $request)
     {
@@ -66,12 +66,12 @@ class KuisionerController extends Controller
         $pertanyaan->aktif = $request->aktif;
         $pertanyaan->choice = $request->choice;
         $pertanyaan->save();
-        return redirect('/pertanyaan');
+        return redirect()->route('pertanyaan.index');
     }
     public function hapus($id)
     {
         $pertanyaan = kuisionerdosen::find($id);
         $pertanyaan->delete();
-        return redirect('/pertanyaan');
+        return redirect()->route('pertanyaan.index');
     }
 }

@@ -13,12 +13,12 @@
                     CRUD Pertanyaan - <strong>EDIT PERTANYAAN</strong>
                 </div>
                 <div class="card-body">
-                    <a href="/peertanyaan" class="btn btn-primary">Kembali</a>
+                    <a href="{{route('pertanyaan.index')}}" class="btn btn-primary">Kembali</a>
                     <br/>
                     <br/>
 
 
-                    <form method="post" action="/peertanyaan/update/{{ $pertanyaan->id }}">
+                    <form method="post" action="pertanyaan/update/{{ $pertanyaan->id }}">
 
                         {{ csrf_field() }}
                         {{ method_field('PUT') }}

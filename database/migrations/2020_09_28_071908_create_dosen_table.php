@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKuisionerdosenTable extends Migration
+class CreateDosenTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateKuisionerdosenTable extends Migration
      */
     public function up()
     {
-        Schema::create('kuisionerdosen', function (Blueprint $table) {
-            $table->increment('id')->index();
-            $table->text('pertanyaan');
-            $table->smallinteger('aktif');
-            $table->smallinteger('choice');
+        Schema::create('dosen', function (Blueprint $table) {
+            $table->increments('id')->index;
+            $table->string('nama',45);
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateKuisionerdosenTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kuisionerdosen');
+        Schema::dropIfExists('dosen');
     }
 }

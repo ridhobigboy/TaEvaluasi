@@ -1,42 +1,55 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+//menampilkan data prodi
+use App\prodi;
+
+//meriderct keroute
 use Illuminate\Support\Facades\DB;
+use Illuminate\routing\Redirector;
 
 class ProdiController extends Controller
 {
     public function index(){
-        $prodi = DB::table('prodi')->get();
+        $prodi = prodi::all();
 
-        return view('prodi',['prodi'=>$prodi]);
+        return view('adminlte.prodi',compact('prodi'));
     }
     public function tambah(){
-        return view('tambahprodi');
+        return view('adminlte.tambahprodi');
     }
     public function new(Request $request){
-        DB::table('prodi')->insert([
+        $this->validate($request,[
+            'id' => 'required',
+            'nama' => 'required'
+        ]);
+        prodi::create([
             'id' => $request->id,
             'nama' => $request->nama
         ]);
-        return redirect('/prodi');
+        return redirect()->route('prodi.index');
     }
     public function edit($id){
-        $prodi = DB::table('prodi')->where('id',$id)->get();
+        $prodi = prodi::find($id);
 
-        return view('editprodi',['prodi'=>$prodi]);
+        return view('adminlte.editprodi',compact('prodi.index'));
     }
-    public function update(Request $request){
-        DB::table('prodi')->where('id',$request->id)->update([
-            'id' => $request->id,
-            'nama' =>$request->nama
+    public function update($id,Request $request){
+        $this->validate($request, [
+            'id' => 'required',
+            'nama' => 'required'
         ]);
-        return redirect('/prodi');
+        $prodi = proid::find($id);
+        $prodi->nama=$request->nama;
+        return redirect()->route('prodi.index');
     }
     public function hapus($id){
-        Db::table('prodi')->where('id',$id)->delete();
-
-        return redirect('/prodi');
+        $prodi = prodi::find($id);
+        $prodi->delete();
+        return redirect()->route('prodi.index');
     }
 }

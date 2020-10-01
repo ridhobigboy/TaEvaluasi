@@ -30,8 +30,8 @@
                                 <td>{{$p->pertanyaan}}</td>
                                 <td>
                                     {{-- Ini nanti di ubah jadi kaya diatas --}}
-                                    <a href="/pertanyaan/edit/{{$p->id}}" class="btn btn-warning">Edit</a>
-                                    <a href="/pertanyaan/hapus/{{$p->id}}" class="btn btn-warning">Hapus</a>
+                                    <a href="{{route('pertanyaan.edit', $id ?? '')}}" class="btn btn-warning">Edit</a>
+                                    <a href="{{route('pertanyaan.hapus', $id ?? '')}}" class="btn btn-warning">Hapus</a>
                                 </td>
                             </tr>
                             @endforeach
