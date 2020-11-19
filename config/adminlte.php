@@ -241,15 +241,15 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        [
+        /* [
             'text'        => 'pages',
             'url'         => 'admin/pages',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
             'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
+        ], */
+        /* ['header' => 'account_settings'], */
+        /* [
             'text' => 'profile',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
@@ -258,20 +258,23 @@ return [
             'text' => 'change_password',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
-        ],
+        ], */
         [
             'text' => 'Jawaban Kuisioner',
-            'url'  => 'admin/Jawaban',
+            'url'  => 'admin/jawaban',
         ], [
             'text' => 'Kuisioner Dosen',
-            'url'  => 'admin/Kuisioner',
+            'url'  => 'admin/pertanyaan',
         ],
         [
             'text' => 'Kuisioner Kelas',
-            'url'  => 'admin/Kelas',
+            'url'  => 'admin/kelas',
         ], [
-            'text' => 'Dosen',
+            /* 'text' => 'Dosen',
             'url'  => '#',
+ */
+            'text' => 'Chart',
+            'url'  => 'admin/ex',
         ],
         //[
         //     'text'    => 'multilevel',

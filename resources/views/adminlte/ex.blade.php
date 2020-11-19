@@ -7,13 +7,8 @@
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
-    <div class="">
-        <h1>asdsad</h1>
-        <h1>asdsad</h1>
-        <h1>asdsad</h1>
-        <h1>asdsad</h1>
-    </div>
+    <p>Ini bakalan jadi page buat chart</p>
+   <p><strong><center>Ini nanti bakalan jadi tempat nyimpen chartnya :3</center></strong></p>
 @stop
 
 @section('css')
