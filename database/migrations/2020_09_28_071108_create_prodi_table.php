@@ -16,7 +16,8 @@ class CreateProdiTable extends Migration
         Schema::create('prodi', function (Blueprint $table) {
             $table->increments('id')->index;
             $table->string('nama',45);
-            $table->timestamps();
+            $table->timestamps('created_at');
+            $table->timestamp('updated_at');
         });
     }
 

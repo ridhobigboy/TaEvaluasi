@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class KusionerkelasSeeder extends Seeder
+class KelasSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,9 @@ class KusionerkelasSeeder extends Seeder
      */
     public function run()
     {
-        //
+        //Mengisi data kedalam DB
+        DB::table('kelas')->insert([
+
+        ]);
     }
 }

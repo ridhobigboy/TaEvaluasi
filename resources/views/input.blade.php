@@ -18,50 +18,6 @@
      <title>Form Evaluasi Dosen</title>
  </head>
  <body>
-    {{-- <h2>Form Evaluasi Dosen</h2>
-    <br><br>
-    @foreach ($k ?? ''uisionerkelas ?? '' as $K)
-    <form method="post">
-        {{ csrf_field() }}
-        <input type="hidden" name="id" value="{{ $k ?? ''->id}}"><br>
-        nim <input type="text" name="nim" value="{{ $k ?? ''->nim}}">
-        kelas <input type="text" name="kelas" value="{{ $k ?? ''->kelas}}">
-        Pelaksanaan Kuliah Dimulai & Diakhiri tepat waktu <br>
-        <input type="radio" id="jawaban_id" value="{{ $k ?? ''->jawaban_id}}">
-        <label for="Pelaksanaan Kuliah Dimulai & Diakhiri tepat waktu">Sangat Tidak Setuju</label>
-        <input type="radio" id="jawaban_id" value="{{ $k ?? ''->jawaban_id}}">
-        <label for="Pelaksanaan Kuliah Dimulai & Diakhiri tepat waktu"> Tidak Setuju</label>
-        <input type="radio" id="jawaban_id" value="{{ $k ?? ''->jawaban_id}}">
-        <label for="Pelaksanaan Kuliah Dimulai & Diakhiri tepat waktu">Agak Setuju</label>
-        <input type="radio" id="jawaban_id" value="{{ $k ?? ''->jawaban_id}}">
-        <label for="Pelaksanaan Kuliah Dimulai & Diakhiri tepat waktu">Setuju</label>
-        <input type="radio" id="jawaban_id" value="{{ $k ?? ''->jawaban_id}}">
-        <label for="Pelaksanaan Kuliah Dimulai & Diakhiri tepat waktu">Sangat Setuju</label><br><br>
-        Dosen menguasai materi & menyampaikan dengan baik <br>
-        <input type="radio" id="jawaban_id" value="{{ $k ?? ''->jawaban_id}}">
-        <label for="Dosen menguasai materi & menyampaikan dengan baik">Sangat Tidak Setuju</label>
-        <input type="radio" id="jawaban_id" value="{{ $k ?? ''->jawaban_id}}">
-        <label for="Dosen menguasai materi & menyampaikan dengan baik"> Tidak Setuju</label>
-        <input type="radio" id="jawaban_id" value="{{ $k ?? ''->jawaban_id}}">
-        <label for="Dosen menguasai materi & menyampaikan dengan baik">Agak Setuju</label>
-        <input type="radio" id="jawaban_id" value="{{ $k ?? ''->jawaban_id}}">
-        <label for="Dosen menguasai materi & menyampaikan dengan baik">Setuju</label>
-        <input type="radio" id="jawaban_id" value="{{ $k ?? ''->jawaban_id}}">
-        <label for="Dosen menguasai materi & menyampaikan dengan baik">Sangat Setuju</label><br><br>
-        Diskusi materi & pembahasan tugas/ujian berjalan baik, didalam/luar kelas <br>
-        <input type="radio" id="jawaban_id" value="{{ $k ?? ''->jawaban_id}}">
-        <label for="Diskusi materi & pembahasan tugas/ujian berjalan baik, didalam/luar kelas">Sangat Tidak Setuju</label>
-        <input type="radio" id="jawaban_id" value="{{ $k ?? ''->jawaban_id}}">
-        <label for="Diskusi materi & pembahasan tugas/ujian berjalan baik, didalam/luar kelas"> Tidak Setuju</label>
-        <input type="radio" id="jawaban_id" value="{{ $k ?? ''->jawaban_id}}">
-        <label for="Diskusi materi & pembahasan tugas/ujian berjalan baik, didalam/luar kelas">Agak Setuju</label>
-        <input type="radio" id="jawaban_id" value="{{ $k ?? ''->jawaban_id}}">
-        <label for="Diskusi materi & pembahasan tugas/ujian berjalan baik, didalam/luar kelas">Setuju</label>
-        <input type="radio" id="jawaban_id" value="{{ $k ?? ''->jawaban_id}}">
-        <label for="Diskusi materi & pembahasan tugas/ujian berjalan baik, didalam/luar kelas">Sangat Setuju</label><br><br>
-        <input type="submit" value="simpan">
-    </form>
-    @endforeach --}}
     <div class="container">
         <div class="card mt-5">
             <div class="card-header text-center">
@@ -91,7 +47,7 @@
                     <div class="form-group">
                         <label>Pelaksanaan Kuliah Dimulai & Diakhiri tepat waktu</label> <br>
 
-                        <select class="form-control" name="pertanyaan_1" multiple="">
+                        <select class="form-control" name="pertanyaan_id" multiple="">
                             <option value="1">Sangat tidak setuju</option>
                             <option value="2">Tidak setuju</option>
                             <option value="3">Agak setuju</option>
@@ -101,7 +57,7 @@
                     </div>
                     <div class="form-group">
                         <label>Dosen menguasai materi & menyampaikan dengan baik</label> <br>
-                        <select class="form-control" name="pertanyaan_2" multiple="">
+                        <select class="form-control" name="pertanyaan_id" multiple="">
                             <option value="1">Sangat tidak setuju</option>
                             <option value="2">Tidak setuju</option>
                             <option value="3">Agak setuju</option>
@@ -111,7 +67,7 @@
                     </div>
                     <div class="form-group">
                         <label>Diskusi materi & pembahasan tugas/ujian berjalan baik, didalam/luar kelas</label> <br>
-                        <select class="form-control" name="pertanyaan_3" multiple="">
+                        <select class="form-control" name="pertanyaan_id" multiple="">
                             <option value="1">Sangat tidak setuju</option>
                             <option value="2">Tidak setuju</option>
                             <option value="3">Agak setuju</option>

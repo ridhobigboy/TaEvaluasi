@@ -9,7 +9,8 @@ Route::get('/', function () {
 
 // Setiap route coba di kasih name kaya dibawah biar enak manggilnya
 
-Route::get('/ex', 'ExController@index');
+Route::get('/ex', 'ExController@index')->name('ex.index');
+Route::get('/ex/chartjs', 'ExController@chartjs')->name('ex.chartjs');
 
 //Routing JawabanKuisioner
 Route::get('/jawaban', 'JawabanController@index')->name('jawaban.index');
@@ -55,7 +56,7 @@ Route::get('prodi/hapus/{id}', 'ProdiController@hapus')->name('prodi.hapus');
 Route::get('matkul', 'MatakuliahController@index')->name('matkul.index');
 Route::get('/matkul/tambah', 'MatakuliahController@tambah')->name('matkul.tambah');
 Route::post('/matkul/new', 'MatakuliahController@new')->name('matkul.new');
-Route::get('/matkul/edit/{id}', 'MatakuliahController@edit')->name('matkul.eidt');
+Route::get('/matkul/edit/{id}', 'MatakuliahController@edit')->name('matkul.edit');
 Route::post('/matkul/update', 'MatakuliahController@update')->name('matkul.update');
 Route::get('/matkul/hapus/{id}', 'MatakuliahController@hapus')->name('matkul.hapus');
 

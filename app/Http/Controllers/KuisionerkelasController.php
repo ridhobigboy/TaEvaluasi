@@ -21,20 +21,18 @@ class KuisionerkelasController extends Controller
 
         $this->validate($req, [
             'nim'           => 'required',
-            'kelas'         => 'required',
-            'content'       => 'required',
-            'pertanyaan_1'  => 'required',
-            'pertanyaan_2'  => 'required',
-            'pertanyaan_3'  => 'required',
+            'kelas_id'         => 'required',
+            'pertanyaan_id'  => 'required',
+            'pertanyaan_id'  => 'required',
+            'pertanyaan_id'  => 'required',
         ]);
 
         Kuesioner_Kelas::create([
             'nim'           => $req->nim,
-            'kelas'         => $req->kelas,
-            'content'       => $req->content,
-            'pertanyaan_1'  => $req->pertanyaan_1,
-            'pertanyaan_2'  => $req->pertanyaan_2,
-            'pertanyaan_3'  => $req->pertanyaan_3,
+            'kelas_id'         => $req->kelas,
+            'pertanyaan_id'  => $req->pertanyaan_id,
+            'pertanyaan_id'  => $req->pertanyaan_id,
+            'pertanyaan_id'  => $req->pertanyaan_id,
         ]);
 
         // dd('proses successfuly');

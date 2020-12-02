@@ -11,6 +11,12 @@ class ProdiSeeder extends Seeder
      */
     public function run()
     {
-        //
+        //insert Data Prodi ke table
+        DB::table('Prodi')->insert([
+            'id' => '01',
+            'nama' => 'Teknik Informatika',
+            'id' => '02',
+            'nama' => 'Sistem Informasi',
+        ]);
     }
 }

@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Quisioner Dosen')
 
 @section('content_header')
     <h1>Pertanyaan</h1>
@@ -20,6 +20,8 @@
                         <tr>
                             <th>Id</th>
                             <th>Pertanyaan</th>
+                            <th>Aktif</th>
+                            <th>Choice</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -27,6 +29,8 @@
                         <tr>
                             <td>{{$p->id}}</td>
                             <td>{{$p->pertanyaan}}</td>
+                            <td>{{$p->Aktif}}</td>
+                            <td>{{$p->Choice}}</td>
                             <td>
                                 {{-- Ini nanti di ubah jadi kaya diatas --}}
                                 <a href="{{route('pertanyaan.edit', $id ?? '')}}" class="btn btn-warning">Edit</a>
