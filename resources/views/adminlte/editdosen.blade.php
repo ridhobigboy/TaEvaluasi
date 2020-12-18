@@ -16,7 +16,7 @@
            <div class="card-body">
                <a href="{{route('dosen.index')}}" class="btn btn-primary">Kembali</a>
                <br><br>
-               <form action="dosen/update/{{$dosen->id}}" method="POST">
+               <form method="POST" action="dosen/update/{{$dosen->id}}">
                  {{ csrf_field() }}
                  {{method_field('put')}}
 
@@ -50,17 +50,3 @@
 </body>
 </html>
 
-
-{{--
-<h2>Edit Dosen</h2>
-<a href="/dosen">Kembali</a>
-<br><br>
-@foreach ($dosen as $d)
-<form action="/dosen/update" method="POST">
-    {{ csrf_field() }}
-    <input type="hidden" name="id" value="{{ $d->id}}"><br>
-    id <input type="text" required="required" name="id" value="{{ $d->id}}"><br>
-    nama <input type="text" required="required" name="nama" value="{{ $d->nama}}"><br>
-    <input type="submit" value="Simpan Data">
-</form>
-@endforeach --}}

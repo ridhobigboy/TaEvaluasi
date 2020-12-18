@@ -26,8 +26,8 @@
                             <td>{{$d->id}}</td>
                             <td>{{$d->nama}}</td>
                             <td>
-                                <a href="{{route('dosen.edit', $id ?? '')}}" class="btn btn-warning">Edit</a>
-                                <a href="{{route('dosen.hapus', $id ?? '')}}" class="btn btn-warning">Hapus</a>
+                                <a href="{{route('dosen.edit', $id ?? '$d')}}" class="btn btn-warning">Edit</a>
+                                <a href="{{route('dosen.hapus', $id ?? '$d')}}" class="btn btn-warning">Hapus</a>
                             </td>
                         </tr>
                     @endforeach

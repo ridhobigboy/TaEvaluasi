@@ -18,5 +18,6 @@ Route::get('/', function () {
 })->name('welcome');
 
 // Route::get('chart', 'ChartController@index');
-Route::get('/input', 'KuisionerkelasController@index')->name('input.index');
+Route::get('/input', 'KuisionerkelasController@index');
 Route::post('/input', 'KuisionerkelasController@proses')->name('proses');
+Route::post('input', 'KuisionerkelasController@store')->name('store');

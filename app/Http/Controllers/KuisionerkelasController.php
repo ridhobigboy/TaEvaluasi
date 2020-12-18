@@ -13,29 +13,25 @@ class KuisionerkelasController extends Controller
     {
         $kuisionerkelas = kuisionerkelas::all();
 
-        return view('input', compact('kuisionerkelas'));
+        return view('input.index', /* compact('kuisionerkelas') */['input' => $kuisionerkelas]);
     }
 
-    public function proses(Request $req)
+    public function store(Request $request)
+    {
+        /* $this -> validate */
+        $kuisionerkelas = new kuisionerkelas([
+            'nim' => $request->get('nim'),
+            'kelas' => $request->get('kelas_id'),
+            'pertanyaan'=> $request->get('pertanyaan_id'),
+            'jawaban' => $request->get('jawaban_id'),
+            'jawaban' => $request->get('jawaban_text'),
+        ]);
+        $kuisionerkelas->save();
+        // dd('proses successfuly');
+        /* return redirect()->route('welcome'); */
+    }
+    /* public function store()
     {
 
-        $this->validate($req, [
-            'nim'           => 'required',
-            'kelas_id'         => 'required',
-            'pertanyaan_id'  => 'required',
-            'pertanyaan_id'  => 'required',
-            'pertanyaan_id'  => 'required',
-        ]);
-
-        Kuesioner_Kelas::create([
-            'nim'           => $req->nim,
-            'kelas_id'         => $req->kelas,
-            'pertanyaan_id'  => $req->pertanyaan_id,
-            'pertanyaan_id'  => $req->pertanyaan_id,
-            'pertanyaan_id'  => $req->pertanyaan_id,
-        ]);
-
-        // dd('proses successfuly');
-        return redirect()->route('welcome');
-    }
+    } */
 }

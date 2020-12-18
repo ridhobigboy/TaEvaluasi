@@ -13,13 +13,13 @@ class CreateKuisionerkelasTable extends Migration
      */
     public function up()
     {
-        Schema::create('kuisionerkelas', function (Blueprint $table) {
-            $table->increments('id')->index();
+        Schema::create('kuisionerkelas', function ($table) {
+            $table->string('id')->primary();
             $table->char('nim',10);
             $table->integer('kelas_id');
-            $table->integer('pertanyaan_id');
-            $table->integer('jawaban_id');
-            $table->text('jawaban_text',45);
+            $table->foreignId('pertanyaan_id');
+            $table->foreginId('jawaban_id');
+            $table->text('jawaban_text',45)->nulllabel();
             $table->timestamps();
         });
     }

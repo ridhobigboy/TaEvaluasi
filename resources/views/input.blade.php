@@ -25,7 +25,7 @@
             </div>
             <div class="card-body">
             <form action="{{route('proses')}}" method="POST" enctype="multipart/form-data">
-                    {{ csrf_field() }}
+                    @csrf
                     <div class="form-group">
                         <label>Nim</label>
                         <input type="text" name="nim" class="form-control" placeholder="Nim">

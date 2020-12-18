@@ -35,7 +35,7 @@ class DosenController extends Controller
     }
     public function edit($id)
     {
-        $dosen = dose::find($id);
+        $dosen = dosen::find($id);
 
         return view('adminlte.editdosen',compact('dosen'));
     }
