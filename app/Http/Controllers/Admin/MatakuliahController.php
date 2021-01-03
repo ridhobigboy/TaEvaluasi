@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 class MatakuliahController extends Controller
 {
     public function index(){
-        $matakuliah = matkuliah::all();
+        $matakuliah = matkuliah::select('id');
 
         return view('adminlte.matkul',compact('matakuliah'));
     }

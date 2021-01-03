@@ -11,9 +11,9 @@ class KuisionerkelasController extends Controller
 {
     public function index()
     {
-        $kuisionerkelas = kuisionerkelas::all();
+        $kuisionerkelas = kuisionerkelas::select('id');
 
-        return view('input.index', /* compact('kuisionerkelas') */['input' => $kuisionerkelas]);
+        return view('input.index', compact('kuisionerkelas'));
     }
 
     public function store(Request $request)

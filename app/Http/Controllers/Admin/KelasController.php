@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\DB;
 class KelasController extends Controller
 {
    public function index(){
-       $kelas = kelas::all();
+       $kelas = kelas::select('id');
 
        return view('adminlte.kelas',compact('kelas'));
    }

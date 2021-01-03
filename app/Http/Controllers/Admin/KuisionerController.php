@@ -16,7 +16,7 @@ class KuisionerController extends Controller
 {
     public function index()
     {
-        $pertanyaan = kuisionerdosen::all();
+        $pertanyaan = kuisionerdosen::select('id');
 
         // return view('adminlte/pertanyaan',['pertanyaan' =>$pertanyaan]);
 

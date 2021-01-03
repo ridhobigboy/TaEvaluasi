@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-    <title>Edit Prodi</title>
-</head>
-<body>
-   <div class="container">
+@extends('adminlte::page')
+
+@section('title', 'Prodi')
+
+@section('content_header')
+    <h1>Prodi</h1>
+@stop
+
+@section('content')
+<div class="container">
        <div class="card mt-5">
            <div class="card-header text-center">
                CRUD Prodi - <strong>EDIT PRODI</strong>
@@ -46,18 +45,12 @@
            </div>
        </div>
    </div>
-</body>
-</html>
+@stop
 
-{{--
-<h2>Edit Prodi</h2>
-<a href="/prodi">Kembali</a>
-<br><br>
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
 
-@foreach ($prodi as $p)
-     {{ csrf_field() }}
-     <input type="hidden" name="id" value="{{ $p->id}}"><br>
-     id <input type="text" required="required" value="{{ $p->id}}"><br>
-     nama <input type="text" required="required" value="{{ $p->nama}}"><br>
-     <input type="submit" value="Simpan Data">
-@endforeach --}}
+@section('js')
+    <script>console.log('HI!')</script>
+@stop

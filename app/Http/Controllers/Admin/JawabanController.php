@@ -16,7 +16,7 @@ class JawabanController extends Controller
 {
     public function index(){
             //mengambil data jawaban
-        $jawaban = jawabankuisioner::all();
+        $jawaban = jawabankuisioner::select('id');
 
         return view('adminlte.jawaban',compact('jawaban'));
     }

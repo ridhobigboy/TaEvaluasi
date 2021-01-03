@@ -14,7 +14,7 @@ class DosenController extends Controller
 {
     public function index(){
         //mengambil data dosen
-        $dosen = dosen::all();
+        $dosen = dosen::select('id');
 
         return view('adminlte.dosen',compact('dosen'));
     }

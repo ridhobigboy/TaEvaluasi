@@ -1,13 +1,13 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
-        <title>Edit Pertanyaan</title>
-    </head>
-    <body>
-        <div class="container">
+@extends('adminlte::page')
+
+@section('title','pertanyaan')
+
+@section('content_header')
+    <h1>PERTANYAAN</h1>
+@stop
+
+@section('content')
+<div class="container">
             <div class="card mt-5">
                 <div class="card-header text-center">
                     CRUD Pertanyaan - <strong>EDIT PERTANYAAN</strong>
@@ -78,5 +78,12 @@
                 </div>
             </div>
         </div>
-    </body>
-</html>
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script>cconsole.log('HI!')</script>
+@stop

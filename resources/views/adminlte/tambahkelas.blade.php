@@ -1,27 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-    <title>Kelas</title>
-</head>
-<body>
-    {{-- <h2>Kelas</h2>
-    <a href="/kelas">Kembali</a>
-    <br><br>
-    <form action="/kelas/new" method="POST">
-       {{ csrf_field() }}
-       id <input type="text" name="id" required="required"><br>
-       kode <input type="text" name="kode" required="required"><br>
-       semester <input type="number" name="semester" required="required"><br>
-       dosen_id <input type="number" name="dosen_id" required="required"><br>
-       matakuliah_id <input type="number" name="matakuliah_id" required="required"><br>
-       prodi_id <input type="number" name="prodi_id" required="required"> <br>
-       <input type="submit" value="Simpan Data">
-    </form> --}}
-    <div class="container">
+@extends('adminlte::page')
+
+@section('title','Kelas')
+
+@section('content_header')
+
+@stop
+
+@section('content')
+<div class="container">
         <div class="card mt-5">
             <div class="card-header text-center">
                 CRUD Kelas <strong>Tambah Kelas</strong>
@@ -93,6 +79,12 @@
             </div>
         </div>
     </div>
+@stop
 
-</body>
-</html>
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script>console.log('HI!')</script>
+@stop

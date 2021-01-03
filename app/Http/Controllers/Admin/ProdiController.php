@@ -15,7 +15,7 @@ use Illuminate\routing\Redirector;
 class ProdiController extends Controller
 {
     public function index(){
-        $prodi = prodi::all();
+        $prodi = prodi::select('id');
 
         return view('adminlte.prodi',compact('prodi'));
     }
