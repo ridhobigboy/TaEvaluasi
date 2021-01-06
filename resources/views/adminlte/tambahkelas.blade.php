@@ -16,7 +16,7 @@
             <a href="{{route('kelas.index')}}" class="btn btn-primary">Kembali</a>
                 <br><br>
 
-                <form action="{{route('kelas.baru')}}" method="POST">
+                <form action="{{route('kelas.new')}}" method="POST">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label>Id</label>

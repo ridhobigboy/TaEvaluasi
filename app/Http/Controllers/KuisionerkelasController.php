@@ -13,7 +13,7 @@ class KuisionerkelasController extends Controller
     {
         $kuisionerkelas = kuisionerkelas::select('id');
 
-        return view('input.index', compact('kuisionerkelas'));
+        return view('input', compact('kuisionerkelas'));
     }
 
     public function store(Request $request)

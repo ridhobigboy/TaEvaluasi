@@ -80,6 +80,11 @@
                         <input type="text" name="content" class="form-control" placeholder="Jawaban">
 
                     </div>
+                    @if(session::has('flash_message'))
+                    <div class="allert{{session::get('flash_type')}}"></div>
+                    @endif
+
+                    @yield('content')
                     <div class="form-group">
                         <input type="submit" class="btn btn-success" value="simpan">
                     </div>

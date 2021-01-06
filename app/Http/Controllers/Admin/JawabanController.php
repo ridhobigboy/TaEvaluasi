@@ -26,17 +26,18 @@ class JawabanController extends Controller
     public function new(Request $request)
     {
 
-        $this->validate($request, [
+        $request->validate([
         'id' => 'required',
         'jawaban' => 'required'
        ]);
             //memanggil model
        jawabankuisioner::create([
-           'id' => $request->id,
-           'jawaban' => $request->jawaban
+        'id' => $request->id,
+        'jawaban' => $request->jawaban
        ]);
 
-       return redirect()->route('jawaban.index');
+       return redirect()->route('jawaban.index')
+       ->with('Success', 'Data Create successfully');
     }
     public function edit($id){
         $jawaban = jawabankuisioner::find($id);
