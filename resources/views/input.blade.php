@@ -24,7 +24,7 @@
                 <strong>Form Evaluasi Dosen</strong>
             </div>
             <div class="card-body">
-            <form action="{{route('proses')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label>Nim</label>
@@ -80,11 +80,6 @@
                         <input type="text" name="content" class="form-control" placeholder="Jawaban">
 
                     </div>
-                    @if(session::has('flash_message'))
-                    <div class="allert{{session::get('flash_type')}}"></div>
-                    @endif
-
-                    @yield('content')
                     <div class="form-group">
                         <input type="submit" class="btn btn-success" value="simpan">
                     </div>

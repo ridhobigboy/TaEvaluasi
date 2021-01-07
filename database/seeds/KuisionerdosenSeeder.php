@@ -26,5 +26,11 @@ class KuisionerdosenSeeder extends Seeder
             'aktif' => '',
             'choice' => '5',
         ]);
+        for ($i=0; $i < 3; $i++){
+            kuisionerdosen:create([
+                'pertanyaan' => rand(1,3),
+
+            ]);
+        }
     }
 }

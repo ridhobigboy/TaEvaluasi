@@ -18,17 +18,14 @@ class KuisionerkelasController extends Controller
 
     public function store(Request $request)
     {
-        /* $this -> validate */
-        $kuisionerkelas = new kuisionerkelas([
-            'nim' => $request->get('nim'),
-            'kelas' => $request->get('kelas_id'),
-            'pertanyaan'=> $request->get('pertanyaan_id'),
-            'jawaban' => $request->get('jawaban_id'),
-            'jawaban' => $request->get('jawaban_text'),
+        $this -> validate($request, [
+            'nim' => 'required',
+            'kelas' => 'required',
+            'pertanyaan' => 'required',
+            'jawaban' => 'required',
+            'jawaban_text' => 'required'
         ]);
-        $kuisionerkelas->save();
-        // dd('proses successfuly');
-        /* return redirect()->route('welcome'); */
+        return redirect()->route('input.index');
     }
     /* public function store()
     {
