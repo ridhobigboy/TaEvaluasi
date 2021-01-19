@@ -15,11 +15,11 @@ class kuisionerkelas extends Model
 
     public function jawabankuisionser()
     {
-        return $this->hasone('App\Jawabankuisioner');
+        return $this->hasmany(jawaban_id::class);
     }
     public function kuisionerdosen()
     {
-        return $this->hasone('App\kuisionerdosen');
+        return $this->hasmany(pertanyaan_id::class);
     }
     public function kelas()
     {

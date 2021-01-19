@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Charts;
-use DB;
+use Illuminate\Support\Facades\DB;
 use App\kuisionerkelas;
 use Redirect\Response;
 use Carbon\Carbon;
@@ -14,10 +14,10 @@ use Carbon\Carbon;
 class ChartController extends Controller
 {
     public function index(){
-    $record = kuisionerkelas::select(\DB::raw("COUNT(*) as count"), \DB::raw("pertanyaan_id(creted_at) as pertanyaan"),\DB::raw("jawaban_id(created_at) as jawaban"))
+    $record = kuisionerkelas::select(DB::raw("COUNT(*) as count"), DB::raw("pertanyaan_id(creted_at) as pertanyaan"),DB::raw("jawaban_id(created_at) as jawaban"))
     ->where('created_at','>','pertanyaan')
     ->groupBy('pertanyaan_id','pertanyaan')
-    ->ordereBy('choice')
+    ->orderBy('pertanyaan')
     ->get();
 
     $data = [];

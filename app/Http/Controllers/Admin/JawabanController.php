@@ -26,7 +26,7 @@ class JawabanController extends Controller
     public function new(Request $request)
     {
 
-        $request->validate([
+        $this->validate($request,[
         'id' => 'required',
         'jawaban' => 'required'
        ]);
@@ -36,8 +36,7 @@ class JawabanController extends Controller
         'jawaban' => $request->jawaban
        ]);
 
-       return redirect()->route('jawaban.index')
-       ->with('Success', 'Data Create successfully');
+       return redirect()->route('jawaban.index');
     }
     public function edit($id){
         $jawaban = jawabankuisioner::find($id);
