@@ -55,14 +55,12 @@
                             <option value="5">Sangat setuju</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label>Dosen menguasai materi & menyampaikan dengan baik</label> <br>
-                        <select class="form-control" name="pertanyaan_id" multiple="">
-                            <option value="1">Sangat tidak setuju</option>
-                            <option value="2">Tidak setuju</option>
-                            <option value="3">Agak setuju</option>
-                            <option value="4">Setuju</option>
-                            <option value="5">Sangat setuju</option>
+                    <div class="">
+                        <select name="" id="">
+                         <option value=""></option>
+                         @foreach ($test as $item )
+                            <option value="{{$item->id}}">{{$item->name}}</option>
+                         @endforeach
                         </select>
                     </div>
                     <div class="form-group">
