@@ -44,7 +44,7 @@
                             </div>
                         @endif
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label>Pelaksanaan Kuliah Dimulai & Diakhiri tepat waktu</label> <br>
 
                         <select class="form-control" name="pertanyaan_id" multiple="">
@@ -54,15 +54,26 @@
                             <option value="4">Setuju</option>
                             <option value="5">Sangat setuju</option>
                         </select>
-                    </div>
-                    <div class="">
-                        <select name="" id="">
-                         <option value=""></option>
-                         @foreach ($test as $item )
-                            <option value="{{$item->id}}">{{$item->name}}</option>
-                         @endforeach
+                    </div> --}}
+                    <div class="form-group">
+                        <label>Pertanyaan_id</label> <br>
+                        <select class="form-control" name="pertanyaan_id" multiple="" >
+                            <option value="">Pilih Option</option>
+                            @foreach ($kuesionerkelas as $item)
+                                <option value="{{$kuesionerkelas->id}}">{{$kuesionerkelas->pertanyaan_id}}</option>
+                            @endforeach
                         </select>
                     </div>
+                    <div class="form-group">
+                        <label>Jawaba_id</label> <br>
+                        <select class="form-control" name="jawaban_id" multiple="">
+                            <option value="">Pilih Option</option>
+                            @foreach ($kuesionerkelas as $item)
+                                <option value="{{$kuesionerkelas->id}}">{{$kuesionerkelas->jawaban_id}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
                     <div class="form-group">
                         <label>Diskusi materi & pembahasan tugas/ujian berjalan baik, didalam/luar kelas</label> <br>
                         <select class="form-control" name="pertanyaan_id" multiple="">

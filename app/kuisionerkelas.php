@@ -9,7 +9,7 @@ class kuisionerkelas extends Model
     //
     protected $table = "kuisionerkelas";
 
-    protected $fillable = ['id','nim','kelas_id','pertanyaan_id','jawaban_id'];
+    protected $fillable = ['id', 'nim', 'kelas_id', 'pertanyaan_id', 'jawaban_id'];
 
     public $timestamp = false;
 
@@ -29,5 +29,4 @@ class kuisionerkelas extends Model
     {
         $this->attributes['jawaban_id'] = json_encode($value);
     }
-
 }

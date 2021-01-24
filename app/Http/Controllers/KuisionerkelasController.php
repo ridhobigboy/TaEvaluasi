@@ -2,23 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\test;
 use Illuminate\Http\Request;
 use App\kuisionerkelas;
+use App\Model\Test;
 use Illuminate\SUpport\Facades\DB;
 
 class KuisionerkelasController extends Controller
 {
     public function index()
     {
-        $test = test::get();
+        // $test = test::get();
+        $kuesionerkelas = kuisionerkelas::get();
 
-        return view('input', compact('test'));
+        return view('input', compact('kuesionerkelas'));
     }
 
     public function store(Request $request)
     {
-        $this -> validate($request, [
+        $this->validate($request, [
             'nim' => 'required',
             'kelas' => 'required',
             'pertanyaan' => 'required',

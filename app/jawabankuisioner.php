@@ -9,7 +9,7 @@ class jawabankuisioner extends Model
     //
     protected $table = "jawabankuisioner";
 
-    protected $fillable = ['id','jawaban'];
+    protected $fillable = ['id', 'jawaban'];
 
     public $timestamp = false;
 
