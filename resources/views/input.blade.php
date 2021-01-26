@@ -65,7 +65,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Jawaba_id</label> <br>
+                        <label>Jawaban_id</label> <br>
                         <select class="form-control" name="jawaban_id" multiple="">
                             <option value="">Pilih Option</option>
                             @foreach ($kuesionerkelas as $item)

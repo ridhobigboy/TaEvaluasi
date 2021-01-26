@@ -5,16 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\kuisionerkelas;
 use App\Model\Test;
-use Illuminate\SUpport\Facades\DB;
+use Illuminate\Support\Facades\DB;
 
 class KuisionerkelasController extends Controller
 {
     public function index()
     {
         // $test = test::get();
-        $kuesionerkelas = kuisionerkelas::get();
+        $kuisionerkelas = DB::table('kuisionerkelas')->get();
 
-        return view('input', compact('kuesionerkelas'));
+        foreach ($kuisionerkelas as $pertanyaan_id){
+            echo $pertanyaan_id -> id;
+        }
+
+        return view('input', compact('kuisionerkelas'));
     }
 
     public function store(Request $request)
