@@ -8,7 +8,6 @@ Route::get('/', function () {
 });
 
 // Setiap route coba di kasih name kaya dibawah biar enak manggilnya
-
 Route::get('/ex', 'ExController@index')->name('ex.index');
 Route::get('/chart', 'ChartController@index')->name('chart.index');
 
