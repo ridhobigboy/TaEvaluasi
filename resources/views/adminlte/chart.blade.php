@@ -7,7 +7,7 @@
 @stop
 
 @section('conten')
-<table style="width:100%">
+<!-- <table style="width:100%">
   <tr>
     <th>Firstname</th>
     <th>Lastname</th>
@@ -23,6 +23,7 @@
     <td>Jackson</td>
     <td>94</td>
   </tr>
-</table>
+</table> -->
+<center><strong><h1>Chart Page</h1></strong></center>
 @stop
 

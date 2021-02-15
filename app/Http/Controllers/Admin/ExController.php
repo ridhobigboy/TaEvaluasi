@@ -3,17 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\kuisionerkelas;
 use Illuminate\Http\Request;
+use App\kuisionerkelas;
 
 class ExController extends Controller
 {
     //
     public function index()
     {
-        //  $kuisionerkelas = kuisionerkelas::select(\DB::raw("jawaban_id(*) as count"))
-        //              ->wherejawaban_id('created_at', date('Y'))
-        //              ->groupBy(\DB::raw("jawaban(created_at)"));
+        // $baru = kuisionerkelas::select(\DB::raw("jawaban_id(*) as count"))
+        //     ->wherejawaban('id', jawaban("jawaban"))
+        //     ->groupBy(\DB::raw("jawaban_id(created_at)"))
+        //     ->pluck('count');
         return view('adminlte.ex');
     }
 }
