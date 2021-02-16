@@ -236,7 +236,7 @@ return [
         ],
         [
             'text' => 'Chart',
-            'url'  => 'admin/chart',
+            'url'  => 'admin/ex',
         ],
         [
             'text' => 'Jawaban Kuisioner',
