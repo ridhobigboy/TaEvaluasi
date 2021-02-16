@@ -14,7 +14,7 @@ class kuisionerdosen extends Model
     // Tambahin ini di setiap model nanti
     public $timestamps = false;
 
-    public function kuisionerkelas ()
+    public function kuisionerkelas()
     {
         return $this->belongsTo('App\kuisionerkelas');
     }
