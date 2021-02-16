@@ -11,10 +11,10 @@ class ExController extends Controller
     //
     public function index()
     {
-        // $baru = kuisionerkelas::select(\DB::raw("jawaban_id(*) as count"))
-        //     ->wherejawaban('id', jawaban("jawaban"))
-        //     ->groupBy(\DB::raw("jawaban_id(created_at)"))
-        //     ->pluck('count');
+        //  $baru = kuisionerkelas::select(\DB::raw("jawaban_id(*) as count"))
+        //      ->whereJawaban('id', Jawaban("jawaban"))
+        //      ->groupBy(\DB::raw("jawaban_id(created_at)"))
+        //      ->pluck('count');
         return view('adminlte.ex');
     }
 }
