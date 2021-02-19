@@ -7,9 +7,15 @@
 @stop
 
 @section('content')
-<div id="container"></div><br><br><br><br>
-<div id="container2"></div><br><br><br><br>
-<div id="container3"></div>
+<table>
+<tr>
+<th><div id="container" style="height: 400px; width: 500px"></th>
+<th><div id="container2" style="height: 400px; width: 500px"></th>
+</tr>
+<tr>
+<td><div id="container3" style="height: 400px; width: 500px"></div></td>
+</tr>
+</table>
 @stop
 
  @section('js')
@@ -387,7 +393,7 @@ Highcharts.chart('container3', {
         text: 'Diskusi materi dan pembahasan tugas/ujian berjalan baik, didalam/luar kelas',
         align: 'center',
         verticalAlign: 'middle',
-        y: 115
+        y: 150
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
