@@ -7,7 +7,6 @@
 @stop
 
 @section('conten')
-<div></div>
-<center><strong><h1>Chart Page</h1></strong></center>
+<table></table>
 @stop
 

@@ -9,11 +9,11 @@
 @section('content')
 <table>
 <tr>
-<th><div id="container" style="height: 400px; width: 500px"></th>
-<th><div id="container2" style="height: 400px; width: 500px"></th>
+<th><div id="container" style="height: 400px; width: 400px"></th><br>
+<th><div id="container2" style="height: 400px; width: 400px"></th><br>
 </tr>
 <tr>
-<td><div id="container3" style="height: 400px; width: 500px"></div></td>
+<td><div id="container3" style="height: 400px; width: 400px"></div><br></td>
 </tr>
 </table>
 @stop

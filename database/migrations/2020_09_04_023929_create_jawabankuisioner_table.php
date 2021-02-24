@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Facade;
 
 class CreateJawabankuisionerTable extends Migration
 {
@@ -14,7 +14,7 @@ class CreateJawabankuisionerTable extends Migration
     public function up()
     {
         Schema::create('jawabankuisioner', function (Blueprint $table) {
-            $table->increment('id');
+            $table->increments('id');
             $table->string('jawaban');
             $table->timestamps();
         });

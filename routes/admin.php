@@ -1,11 +1,15 @@
 <?php
 
 use App\Http\Controllers\Admin\ExController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return 'Hi ini dashboard asd  ';
 });
+
+// Login
+Route::get('log-in', 'LoginController@index')->name('login');
 
 // Setiap route coba di kasih name kaya dibawah biar enak manggilnya
 Route::get('/ex', 'ExController@index')->name('ex.index');
