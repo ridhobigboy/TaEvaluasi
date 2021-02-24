@@ -37,4 +37,9 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    //login show
+    public function showLoginForm()
+    {
+        return view('core.auth.login');
+    }
 }

@@ -21,3 +21,15 @@ Route::get('/', function () {
 Route::get('/input', 'KuisionerkelasController@index')->name('index');
 // Route::post('/input/proses', 'KuisionerkelasController@proses')->name('proses');
 Route::post('input/store', 'KuisionerkelasController@store')->name('store');
+
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

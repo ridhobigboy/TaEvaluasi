@@ -14,7 +14,7 @@ class CreateKuisionerkelasTable extends Migration
     public function up()
     {
         Schema::create('kuisionerkelas', function (Blueprint $table) {
-            $table->increment('id');
+            $table->increments('id');
             $table->char('nim');
             $table->integer('kelas_id');
             $table->integer('pertanyaan_id');

@@ -8,10 +8,10 @@ use Auth;
 use JsValidator;
 
 
-class LoginController extends Controller
+class RegisterController extends Controller
 {
     public function index(){
-        return view('core.login');
+        return view('core.register');
     }
 
 }
