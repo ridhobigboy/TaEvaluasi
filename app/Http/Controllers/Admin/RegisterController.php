@@ -11,7 +11,7 @@ use JsValidator;
 class RegisterController extends Controller
 {
     public function index(){
-        return view('core.register');
+        return view('auth.register');
     }
 
 }

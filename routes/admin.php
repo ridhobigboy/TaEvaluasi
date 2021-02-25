@@ -67,6 +67,6 @@ Route::post('/matkul/update', 'MatakuliahController@update')->name('matkul.updat
 Route::get('/matkul/hapus/{id}', 'MatakuliahController@hapus')->name('matkul.hapus');
 
 //Routing adminlte3
-// Auth::routes();
+//  Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+//  Route::get('/home', 'HomeController@index')->name('home');
