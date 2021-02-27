@@ -13,6 +13,7 @@ Route::get('login', 'LoginController@index')->name('login');
 
 //Register
 Route::get('register', 'RegisterController@index')->name('register');
+Route::post('register/validator', 'RegisterController@validator')->name('create');
 
 // Setiap route coba di kasih name kaya dibawah biar enak manggilnya
 Route::get('/ex', 'ExController@index')->name('ex.index');
@@ -67,6 +68,6 @@ Route::post('/matkul/update', 'MatakuliahController@update')->name('matkul.updat
 Route::get('/matkul/hapus/{id}', 'MatakuliahController@hapus')->name('matkul.hapus');
 
 //Routing adminlte3
-//  Auth::routes();
+//   Auth::routes();
 
-//  Route::get('/home', 'HomeController@index')->name('home');
+//   Route::get('/home', 'HomeController@index')->name('home');
