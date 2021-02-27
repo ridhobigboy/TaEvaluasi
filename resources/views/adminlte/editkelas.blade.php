@@ -13,7 +13,7 @@
                 CRUD Kelas - <strong>EDIT KELAS</strong>
             </div>
             <div class="card-body">
-                <a href="{{route('kelas.index')}}" class="btn btn-primary">Kembali</a>
+                <a href="{{route('kelas.index< $kelas')}}" class="btn btn-primary">Kembali</a>
                 <br/>
                 <br/>
 
@@ -59,7 +59,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label>dosen_id</label>
+                        <label>dosen</label>
                         <input type="text" name="dosen_id" class="form-control" placeholder="choice" value="{{$kelas->dosen_id}}">
 
                         @if ($errors->has('dosen_id'))
@@ -70,7 +70,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label>matakuliah_id</label>
+                        <label>matakuliah</label>
                         <input type="text" name="matakuliah_id" class="form-control" placeholder="choice" value="{{$kelas->matakuliah_id}}">
 
                         @if ($errors->has('matakuliah_id'))
@@ -81,7 +81,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label>prodi_id</label>
+                        <label>prodi</label>
                         <input type="text" name="prodi_id" class="form-control" placeholder="choice" value="{{$kelas->prodi_id}}">
 
                         @if ($errors->has('prodi_id'))

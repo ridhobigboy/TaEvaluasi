@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -29,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -40,6 +41,13 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
+
+    public function register(Request $request)
+{
+    $this->validator($request->all())->validate();
+
+    return redirect($this->redirectPath())->with('message', 'Your message');
+}
 
     /**
      * Get a validator for an incoming registration request.
@@ -69,5 +77,19 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function new(array $data)
+    {
+
+            //memanggil model
+            User::create([
+
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+       ]);
+
+       return redirect()->route('jawaban.index');
     }
 }

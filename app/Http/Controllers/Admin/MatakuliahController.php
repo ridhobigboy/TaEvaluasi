@@ -6,15 +6,17 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
     //mengambil data kuisioner
-use App\matkuliah;
+use App\matakuliah;
 
     //meridericet keroute
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
+
 class MatakuliahController extends Controller
 {
     public function index(){
-        $matakuliah = matkuliah::select('id');
+        // $matakuliah = matkuliah::select('id');
+        $matakuliah = DB::table('matakuliah')->get();
 
         return view('adminlte.matkul',compact('matakuliah'));
     }
@@ -23,14 +25,12 @@ class MatakuliahController extends Controller
     }
     public function new(Request $request){
         $this->validate($request, [
-            'id' => 'required',
             'nama' => 'required',
             'sks' => 'required'
         ]);
 
             //memanggil model
-         matkuliah::create([
-             'id' => $request->id,
+         matakuliah::create([
              'nama' =>$request->nama,
              'sks' => $request->sks
          ]);

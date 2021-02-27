@@ -20,7 +20,7 @@
                  {{ csrf_field() }}
                  {{method_field('put')}}
 
-                 <div class="form-group">
+                 <!-- <div class="form-group">
                      <label>Id</label>
                      <input type="text" name="id" class="form-control" placeholder="Id dosen" value="{{$dosen->id}}">
 
@@ -29,7 +29,7 @@
                              {{$errors->first('id')}}
                          </div>
                      @endif
-                 </div>
+                 </div> -->
                  <div class="form-group">
                      <label>Nama</label>
                      <textarea name="nama" class="form-control" placeholder="Nama Dosen"> {{$dosen->nama}}</textarea>

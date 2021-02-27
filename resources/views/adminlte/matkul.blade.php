@@ -16,23 +16,26 @@
                 <table class="table table-bordered table-haver table-striped">
                      <thead>
                          <tr>
-                             <th>Id</th>
+                             <th>No</th>
                              <th>Nama</th>
                              <th>Sks</th>
                          </tr>
                      </thead>
                      <tbody>
-                         @foreach ($matakuliah as $m)
+                     <?php
+                     $no = 0 ;
+                         foreach ($matakuliah as $m): $no++
+                         ?>
                              <tr>
                                  <td>{{$m->id}}</td>
                                  <td>{{$m->nama}}</td>
                                  <td>{{$m->sks}}</td>
                                  <td>
-                                    <a href="{{route('matkul.edit', $id ?? '')}}" class="btn btn-warning">Edit</a>
-                                    <a href="{{route('matkul.hapus', $id ?? '')}}" class="btn btn-warning">Hapus</a>
+                                    <a href="{{route('matkul.edit', $m->id )}}" class="btn btn-warning">Edit</a>
+                                    <a href="{{route('matkul.hapus', $m->id )}}" class="btn btn-warning">Hapus</a>
                                  </td>
                              </tr>
-                         @endforeach
+                         <?php endforeach;?>
                      </tbody>
                 </table>
             </div>

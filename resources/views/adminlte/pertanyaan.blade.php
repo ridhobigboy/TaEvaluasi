@@ -18,26 +18,28 @@
                 <table class="table table-bordered table-haver table-striped">
                     <thead>
                         <tr>
-                            <th>Id</th>
+                            <th>No</th>
                             <th>Pertanyaan</th>
                             <th>Aktif</th>
                             <th>Choice</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        @foreach ($pertanyaan as $p)
+                    <tbody><?php
+                        $no = 0;
+                        foreach ($pertanyaan as $p): $no++
+                        ?>
                         <tr>
                             <td>{{$p->id}}</td>
                             <td>{{$p->pertanyaan}}</td>
-                            <td>{{$p->Aktif}}</td>
-                            <td>{{$p->Choice}}</td>
+                            <td>{{$p->aktif}}</td>
+                            <td>{{$p->choice}}</td>
                             <td>
                                 {{-- Ini nanti di ubah jadi kaya diatas --}}
-                                <a href="{{route('pertanyaan.edit', $id ?? '')}}" class="btn btn-warning">Edit</a>
-                                <a href="{{route('pertanyaan.hapus', $id ?? '')}}" class="btn btn-warning">Hapus</a>
+                                <a href="{{route('pertanyaan.edit', $p->id )}}" class="btn btn-warning">Edit</a>
+                                <a href="{{route('pertanyaan.hapus', $p->id )}}" class="btn btn-warning">Hapus</a>
                             </td>
                         </tr>
-                        @endforeach
+                       <?php endforeach;?>
                     </tbody>
                 </table>
             </div>

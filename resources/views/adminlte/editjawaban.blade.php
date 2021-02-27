@@ -16,11 +16,12 @@
             <a href="{{route('jawaban.index')}}" class="btn btn-primary">Kembali</a>
             <br><br>
 
-            <form action="jawaban/new/{{$jawaban->id}}" method="POST">
+            <!-- <form action="jawaban,edit.{{$jawaban->id}}" method="POST"> -->
+            <form action="{{route('jawaban.update', $jawaban)}}" method="POST">
                 {{ csrf_field() }}
                 {{ method_field('put')}}
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label>Id</label>
                     <input type="text" name="id" class="form-control" placeholder="Id Jawaban" value=" {{ $jawaban->id}}">
 
@@ -29,8 +30,8 @@
                             {{ $errors->first('id')}}
                         </div>
                     @endif
-                </div>
-            </form>
+                </div> -->
+
            </div>
            <div class="form-group">
                <label>Jawaban</label>
@@ -46,6 +47,7 @@
                <input type="submit" class="btn btn-success" value="Simpan">
            </div>
        </div>
+       </form>
    </div>
 @stop
 

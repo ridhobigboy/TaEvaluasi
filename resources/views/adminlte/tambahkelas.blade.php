@@ -18,7 +18,7 @@
 
                 <form action="{{route('kelas.new')}}" method="POST">
                     {{ csrf_field() }}
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label>Id</label>
                         <input type="text" name="id" class="form-control" placeholder="Id Kelas">
                         @if ($errors->has('id'))
@@ -26,7 +26,7 @@
                                 {{$errors->first('id')}}
                             </div>
                         @endif
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label>Kode</label>
                         <input type="text" name="kode" class="form-control" placeholder="Kode">
@@ -46,7 +46,7 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <label>Dosen_id</label>
+                        <label>Dosen</label>
                         <input type="text" name="dosen_id" class="form-control" placeholder="dosen_id">
                         @if ($errors->has('dosen_id'))
                             <div class="text-danger">
@@ -55,7 +55,7 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <label>Matakuliah_id</label>
+                        <label>Matakuliah</label>
                         <input type="text" name="matakuliah_id" class="form-control" placeholder="matakuliah_id">
                         @if ($errors->has('matakuliah_id'))
                             <div class="text-danger">
@@ -64,8 +64,8 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <label>Prodi_id</label>
-                        <input type="text" name="Prodi_id" class="form-control" placeholder="prodi_id">
+                        <label>Prodi</label>
+                        <input type="text" name="prodi_id" class="form-control" placeholder="prodi_id">
                         @if ($errors->has('prodi_id'))
                             <div class="text-danger">
                                 {{$errors->first('prodi_id')}}

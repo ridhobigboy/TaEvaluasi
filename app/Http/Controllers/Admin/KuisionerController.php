@@ -16,7 +16,9 @@ class KuisionerController extends Controller
 {
     public function index()
     {
-        $pertanyaan = kuisionerdosen::select('id');
+        // $pertanyaan = kuisionerdosen::select('id');
+
+        $pertanyaan = DB::table('kuisionerdosen')->get();
 
         // return view('adminlte/pertanyaan',['pertanyaan' =>$pertanyaan]);
 
@@ -30,7 +32,6 @@ class KuisionerController extends Controller
     public function baru(Request $request)
     {
         $this->validate($request, [
-            'id' => 'required',
             'pertanyaan' => 'required',
             'aktif' => 'required',
             'choice' => 'required'
@@ -38,7 +39,6 @@ class KuisionerController extends Controller
 
         // Harusnya yg di panggil itu model yg udah di bikin
         kuisionerdosen::create([
-            'id' => $request->id,
             'pertanyaan' => $request->pertanyaan,
             'aktif' => $request->aktif,
             'choice' => $request->choice

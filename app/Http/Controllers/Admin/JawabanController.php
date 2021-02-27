@@ -16,7 +16,8 @@ class JawabanController extends Controller
 {
     public function index(){
             //mengambil data jawaban
-        $jawaban = jawabankuisioner::select('id');
+        // $jawaban = jawabankuisioner::select('id');
+        $jawaban = DB::table('jawabankuisioner')->get();
 
         return view('adminlte.jawaban',compact('jawaban'));
     }
@@ -27,12 +28,12 @@ class JawabanController extends Controller
     {
 
         $this->validate($request,[
-        'id' => 'required',
+
         'jawaban' => 'required'
        ]);
             //memanggil model
        jawabankuisioner::create([
-        'id' => $request->id,
+
         'jawaban' => $request->jawaban
        ]);
 
@@ -43,13 +44,13 @@ class JawabanController extends Controller
 
         return view('adminlte.editjawaban',compact('jawaban'));
     }
-    public function update($id,Request $request){
-        $this->validate($request, [
-            'id' => 'reuquired',
-            'jawaban' => 'required'
-        ]);
+    public function update(Request $request){
+        // $this->validate($request, [
+        //     'id' => 'reuquired',
+        //     'jawaban' => 'required'
+        // ]);
 
-        $jawaban = jawabankuisioner::find($id);
+        $jawaban = jawabankuisioner::find($request->id);
         $jawaban->jawaban = $request->jawaban;
         $jawaban->save();
         return redirect()->route('jawaban.index');

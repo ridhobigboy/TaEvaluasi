@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\DB;
 class KelasController extends Controller
 {
    public function index(){
-       $kelas = kelas::select('id');
+    //    $kelas = kelas::select('id');
 
+        $kelas = DB::table('kelas')->get();
        return view('adminlte.kelas',compact('kelas'));
    }
    public function tambah(){
@@ -22,17 +23,10 @@ class KelasController extends Controller
    }
    public function new(Request $request)
    {
-       $this->validate($request, [
-        'id' => 'required',
-        'kode' => 'required',
-        'semester' => 'required',
-        'dosen_id' => 'required',
-        'matakuliah_id' => 'required',
-        'prodi_id' => 'required'
-       ]);
+
 
        kelas::create([
-           'id' => $request->id,
+
            'kode' => $request->kode,
            'semester' => $request->semester,
            'dosen_id' => $request->dosen_id,

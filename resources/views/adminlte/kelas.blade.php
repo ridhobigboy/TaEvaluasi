@@ -18,29 +18,31 @@
                 <table class="table table-bordered table-haver table-striped">
                     <thead>
                         <tr>
-                            <th>Id</th>
+                            <th>No</th>
                             <th>Kode</th>
                             <th>Semester</th>
-                            <th>Dosen_id</th>
-                            <th>Matakuliah_id</th>
-                            <th>Prodi_id</th>
+                            <th>Dosen</th>
+                            <th>matakuliah</th>
+                            <th>Prodi</th>
                         </tr>
                         </thead>
                         <tbody>
-                         @foreach ($kelas as $k)
+                        <?php
+                        $no = 0;
+                         foreach ($kelas as $k): $no++ ?>
                             <tr>
-                                <td>{{ $k->id}}</td>
+                                <td><?php echo $no ?></td>
                                 <td>{{ $k->kode}}</td>
                                 <td>{{ $k->semester}}</td>
                                 <td>{{ $k->dosen_id}}</td>
                                 <td>{{ $k->matakuliah_id}}</td>
                                 <td>{{ $k->prodi_id}}</td>
                                 <td>
-                                    <a href="{{route('kelas.edit', $id ?? '')}}" class="btn btn-warning">Edit</a>
-                                    <a href="{{route('kelas.hapus', $id ?? '')}}" class="btn btn-warning">Hapus</a>
+                                    <a href="{{route('kelas.edit', $k->id )}}" class="btn btn-warning">Edit</a>
+                                    <a href="{{route('kelas.hapus', $k->id )}}" class="btn btn-warning">Hapus</a>
                                 </td>
                             </tr>
-                         @endforeach
+                         <?php endforeach; ?>
                         </tbody>
                 </table>
             </div>

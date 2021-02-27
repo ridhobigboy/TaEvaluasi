@@ -8,13 +8,14 @@ use Illuminate\Http\Request;
 use App\dosen;
     //meridirect route
 use Illumante\Routing\Redirector;
-use Illumante\Support\Facades\DB;
+use Illuminate\Support\Facades\DB;
 
 class DosenController extends Controller
 {
     public function index(){
         //mengambil data dosen
-        $dosen = dosen::select('id');
+        // $dosen = dosen::select('id');
+        $dosen = DB::table('dosen')->get();
 
         return view('adminlte.dosen',compact('dosen'));
     }
@@ -23,12 +24,10 @@ class DosenController extends Controller
     }
     public function new(Request $request){
         $this->validate($request, [
-            'id' => 'required',
             'jawaban' => 'required'
         ]);
 
         dosen::create([
-            'id' => $request->id,
             'jawaban' => $request->jawaban
         ]);
         return redirect()->route('dosen.index');
@@ -41,7 +40,7 @@ class DosenController extends Controller
     }
     public function update($id, Request $request){
         $this->validate($request, [
-            'id' => 'required',
+
             'nama' => 'required'
         ]);
 
@@ -49,7 +48,7 @@ class DosenController extends Controller
         $dosen->dosen = $request->id;
         $dosen->dosen = $request->nama;
         $dosen->save();
-        return redirect()->route('adminlte.dosen');
+        return redirect()->route('dosen.index');
     }
     public function hapus($id)
     {

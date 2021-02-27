@@ -18,7 +18,7 @@
 
                 <form action="{{route('pertanyaan.baru')}}" method="POST">
                     {{ csrf_field() }}
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label>Id</label>
                         <input type="text" name="id" class="form-control" placeholder="Id pertanyaan">
                         @if ($errors->has('id'))
@@ -26,7 +26,7 @@
                                 {{$errors->first('id')}}
                             </div>
                         @endif
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label>pertanyaan</label>
                         <textarea name="pertanyaan" class="form-control" placeholder="Pertanyaan"></textarea>
