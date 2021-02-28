@@ -15,7 +15,8 @@ use Illuminate\routing\Redirector;
 class ProdiController extends Controller
 {
     public function index(){
-        $prodi = prodi::select('id');
+        // $prodi = prodi::select('id');
+        $prodi = DB::table('prodi')->get();
 
         return view('adminlte.prodi',compact('prodi'));
     }
@@ -24,11 +25,11 @@ class ProdiController extends Controller
     }
     public function new(Request $request){
         $this->validate($request,[
-            'id' => 'required',
+
             'nama' => 'required'
         ]);
         prodi::create([
-            'id' => $request->id,
+
             'nama' => $request->nama
         ]);
         return redirect()->route('prodi.index');
@@ -39,11 +40,11 @@ class ProdiController extends Controller
         return view('adminlte.editprodi',compact('prodi.index'));
     }
     public function update($id,Request $request){
-        $this->validate($request, [
-            'id' => 'required',
-            'nama' => 'required'
-        ]);
-        $prodi = proid::find($id);
+        // $this->validate($request, [
+        //     'id' => 'required',
+        //     'nama' => 'required'
+        // ]);
+        $prodi = prodi::find($request->id);
         $prodi->nama=$request->nama;
         return redirect()->route('prodi.index');
     }

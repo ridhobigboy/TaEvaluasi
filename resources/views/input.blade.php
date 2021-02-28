@@ -59,8 +59,8 @@
                         <label>Pertanyaan_id</label> <br>
                         <select class="form-control" name="pertanyaan_id" multiple="" >
                             <option value="">Pilih Option</option>
-                            @foreach ($kuesionerkelas as $item)
-                                <option value="{{$kuesionerkelas->id}}">{{$kuesionerkelas->pertanyaan_id}}</option>
+                            @foreach ($kuesionerkelas ?? '' as $item)
+                                <option value="{{$kuisionerkelas->id}}">{{$kuesionerkelas ?? ''->pertanyaan_id}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -68,8 +68,8 @@
                         <label>Jawaban_id</label> <br>
                         <select class="form-control" name="jawaban_id" multiple="">
                             <option value="">Pilih Option</option>
-                            @foreach ($kuesionerkelas as $item)
-                                <option value="{{$kuesionerkelas->id}}">{{$kuesionerkelas->jawaban_id}}</option>
+                            @foreach ($kuesionerkelas ?? '' as $item)
+                                <option value="{{$kuisionerkelas->id}}">{{$kuesionerkelas ?? ''->jawaban_id}}</option>
                             @endforeach
                         </select>
                     </div>
