@@ -16,8 +16,8 @@ class JawabanController extends Controller
 {
     public function index(){
             //mengambil data jawaban
-        // $jawaban = jawabankuisioner::select('id');
-        $jawaban = DB::table('jawabankuisioner')->get();
+        $jawaban = jawabankuisioner::select('id');
+        // $jawaban = DB::table('jawabankuisioner')->get();
 
         return view('adminlte.jawaban',compact('jawaban'));
     }

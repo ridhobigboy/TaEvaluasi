@@ -135,11 +135,6 @@ Highcharts.chart('container', {
                     y: 10.57,
                     drilldown: "Tidak Setuju"
                 },
-                // {
-                //     name: "Internet Explorer",
-                //     y: 7.23,
-                //     drilldown: "Internet Explorer"
-                // },
                 {
                     name: "Agak Setuju",
                     y: 5.58,
